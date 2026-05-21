@@ -150,3 +150,17 @@ productAccordions.forEach(accordion => {
         question.parentNode.classList.toggle('open')
     })
 })
+
+
+// gsap.to(".leaf", {
+//     y: -80,
+//     x: 20,
+//     scale: 1.08,
+//     ease: "none",
+//     scrollTrigger: {
+//         trigger: ".leaf",
+//         start: "top bottom",
+//         end: "bottom top",
+//         scrub: 1
+//     }
+// })

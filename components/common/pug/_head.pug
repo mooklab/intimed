@@ -1,7 +1,7 @@
 -
     site = {
         head: {
-            title: 'Туристическая компания "Чудесный Отдых"',
+            title: 'Интимед - Белая линия',
             description: 'Описание сайта',
             keywords: 'Ключевые слова',
             image: 'Изображение'
@@ -38,6 +38,9 @@ head
     meta(property='og:description', content=site.head.description)
     meta(property='og:image', content=site.head.image)
     meta(property='og:site_name', content=site.head.title)
+
+    script(defer, src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js")
+    script(defer, src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js")
 
     //- Стили
     link(rel='icon', href='images/favicon.png', type='image/png')
