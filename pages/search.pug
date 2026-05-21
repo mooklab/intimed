@@ -1,0 +1,28 @@
+extends ../components/common/pug/_layout.pug
+include ../components/common/pug/_mixins.pug
+
+block links
+    link(rel="stylesheet", href="css/search.css")
+
+block content
+
+    section.search
+        div.container
+
+            h2 Поиск
+
+            form(action="#").search
+                img(src="images/search.svg")
+                input(type="search", placeholder="Поиск")
+                button Поиск
+
+            h3 Вот что удалось найти по Вашему запросу
+
+            div.list
+                +product('images/9.webp', 'Гель для интимной гигиены', 'Деликатный ежедневный уход')
+                +product('images/15.webp', 'Гель для интимной гигиены', 'Длительное чувство комфорта')
+                +product('images/17.webp', 'Гель для интимной гигиены', 'Нежный уход за чувствительной кожей')
+                +product('images/18.webp', 'Гель для интимной гигиены', 'Деликатный ежедневный уход')
+                +product('images/16.webp', 'Гель для интимной гигиены', 'Длительное чувство комфорта')
+                +product('images/20.webp', 'Гель для интимной гигиены', 'Нежный уход за чувствительной кожей')
+                +product('images/19.webp', 'Гель для интимной гигиены', 'Деликатный ежедневный уход')

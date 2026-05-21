@@ -1,0 +1,55 @@
+header
+    div.container
+
+        div(onclick="this.closest('header').classList.toggle('menu')").mobile
+            div.menu_icon
+                include ../../images/menu.svg
+            div.cross_icon
+                include ../../images/header_cross.svg
+
+        a(href="#").logotype
+            img(src="images/logotype.svg", alt="Intimed")
+
+        menu
+            a(href="#")
+                span О бренде
+            div.has-menu
+                div.group
+                    span Каталог
+                    img(src="images/menu_arrow.svg")
+                div.submenu
+                    a(href="#") Intimed Daily
+                    a(href="#") Intimed Bio
+                    a(href="#") Intimed Comfort
+            a(href="#")
+                span Где купить
+
+        form(action="#").search
+            div(onclick="this.parentNode.classList.add('show')").group
+                img(src="images/search.svg")
+                input(type="search", placeholder="Поиск")
+                button Поиск
+
+            div(onclick="this.parentNode.classList.remove('show'); this.parentNode.reset()").backdrop
+
+        div.menu_popup
+
+            form(action="#").subsearch
+                img(src="images/search.svg")
+                input(type="search", placeholder="Поиск")
+
+
+            a(href="#") О бренде
+            div.has-menu.open
+                div(onclick="this.parentNode.classList.toggle('open')").group
+                    span Каталог
+                    img(src="images/menu_arrow.svg")
+                div.submenu
+                    div.overflow
+                        div.wrap
+                            a(href="#") Intimed Daily
+                            a(href="#") Intimed Bio
+                            a(href="#") Intimed Comfort
+            a(href="#") Где купить
+
+

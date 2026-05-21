@@ -1,0 +1,50 @@
+mixin question(title)
+    div.accordion
+        div.question
+            span= title
+            img(src="images/accordion_arrow.svg")
+        div.answer
+            div.overflow
+                div.wrap
+                    span Intimed представлена на Ozon и Wildberries. Оба маркетплейса предлагают быструю доставку по России и удобные способы оплаты. Выбирайте тот, который вам больше нравится.
+
+section.faq
+    div.container
+
+        div.text
+            h2 Ваши вопросы
+            span Ответы на основные вопросы о покупке и доставке продукции Intimed помогут вам быстро найти нужную информацию.
+
+        div.tabs
+            div.tabs_captions
+                div.tab_caption.open Общие вопросы
+                div.tab_caption Intimed Daily
+                div.tab_caption Intimed Bio
+                div.tab_caption Intimed Comfort
+            div.tabs_contents
+                div.tab_content.open
+                    +question('Какие маркетплейсы доступны?')
+                    +question('Как быстро придёт заказ?')
+                    +question('Есть ли гарантия качества?')
+                    +question('Какие способы оплаты доступны?')
+                    +question('Можно ли вернуть товар?')
+                div.tab_content
+                    +question('Какие маркетплейсы доступны?2')
+                    +question('Как быстро придёт заказ?2')
+                    +question('Есть ли гарантия качества?2')
+                    +question('Какие способы оплаты доступны?2')
+                    +question('Можно ли вернуть товар?2')
+                div.tab_content
+                    +question('Какие маркетплейсы доступны?3')
+                    +question('Как быстро придёт заказ?3')
+                    +question('Есть ли гарантия качества?3')
+                    +question('Какие способы оплаты доступны?3')
+                    +question('Можно ли вернуть товар?3')
+                div.tab_content
+                    +question('Какие маркетплейсы доступны?4')
+                    +question('Как быстро придёт заказ?4')
+                    +question('Есть ли гарантия качества?4')
+                    +question('Какие способы оплаты доступны?4')
+                    +question('Можно ли вернуть товар?4')
+                   
+                    

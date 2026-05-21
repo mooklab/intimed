@@ -1,0 +1,77 @@
+@use '../components/common/sass/_mixins' as *
+@use '../components/common/sass/_variables' as *
+
+section.search
+    margin-top: var(--section-gap)
+    margin-bottom: var(--section-gap)
+
+    h2
+        margin-bottom: 30px
+        +s(m)
+            margin-bottom: 12px
+
+    form.search
+        position: relative
+        max-width: 720px
+        input
+            border: 1px solid #e798a8
+            border-radius: 30px
+            padding: 10px
+            padding-left: 42px
+            padding-right: 110px
+            width: 100%
+            &::placeholder
+                color: #6d454d80
+
+            &::-webkit-search-cancel-button
+                appearance: none
+                cursor: pointer
+                height: 14px
+                width: 14px
+                background-image: url('../images/search_cross.svg')
+                background-size: contain
+                +s(m)
+                    height: 10px
+                    width: 10px
+        img
+            position: absolute
+            top: 50%
+            left: 16px
+            width: 17px
+            height: 17px
+            transform: translateY(-55%)
+
+        button
+            position: absolute
+            top: 0
+            right: 0
+            bottom: 0
+            +s(s)
+                padding-top: 5px
+                padding-bottom: 5px
+
+    h3
+        margin-top: 60px
+        margin-bottom: 30px
+        +s(m)
+            margin-top: 30px
+            margin-bottom: 20px
+
+    div.list
+        display: grid
+        grid-template-columns: repeat(3, 1fr)
+        grid-gap: 20px
+        +s(m)
+            grid-template-columns: repeat(2, 1fr)
+
+    div.empty
+        display: grid
+        h3
+            margin-bottom: unset
+        span.note
+            margin-top: 16px
+            margin-bottom: 20px
+            +s(m)
+                margin-top: 12px
+        a
+            width: max-content

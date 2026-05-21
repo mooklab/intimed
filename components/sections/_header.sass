@@ -1,0 +1,346 @@
+@use '../../components/common/sass/_variables' as *
+@use '../../components/common/sass/_mixins' as *
+
+header
+    margin-top: 48px
+    z-index: 20
+    +s(m)
+        margin-top: 24px
+
+    div.container
+        position: relative
+        display: grid
+        align-items: center
+        grid-template-columns: max-content 1fr max-content
+
+    div.mobile
+        cursor: pointer
+        display: none
+        align-items: center
+        justify-items: center
+        width: 40px
+        height: 40px
+        border-radius: 50%
+        background: #e798a833
+        z-index: 4
+        +s(s)
+            display: grid
+
+        div.menu_icon
+            display: grid
+        div.cross_icon
+            display: none
+
+    a.logotype
+        z-index: 4
+        +s(s)
+            text-align: center
+            margin-right: 40px
+        img
+            +s(m)
+                width: 112px
+
+    menu
+        display: grid
+        grid-auto-flow: column
+        grid-auto-columns: max-content
+        justify-content: center
+        grid-gap: 72px
+        margin-right: 130px
+        z-index: 1
+        +s(l)
+            grid-gap: 48px
+        +s(m)
+            grid-gap: 24px
+        +s(s)
+            display: none
+
+        div.group
+            position: relative
+            display: grid
+            grid-auto-flow: column
+            grid-auto-columns: max-content
+            align-items: center
+            grid-gap: 6px
+
+        div.has-menu
+            position: relative
+            &:hover
+                div.group
+                    img
+                        transform: rotate(180deg)
+                div.submenu
+                    opacity: 1
+                    pointer-events: auto
+
+        div.submenu
+            position: absolute
+            top: calc(100% + 10px)
+            left: 50%
+            opacity: 0
+            pointer-events: none
+            transition: all 0.5s
+            transform: translateX(-50%)
+            border: 1px solid rgba(231, 152, 168, 0.36)
+            border-radius: 10px
+            padding: 20px 15px
+            z-index: 3
+            background: white
+            display: grid
+            grid-gap: 15px
+            white-space: nowrap
+            &::after
+                content: ''
+                position: absolute
+                top: -20px
+                left: 0
+                display: block
+                width: 100%
+                height: 20px
+
+        a:hover
+            color: $pink-dark
+
+    form.search
+        cursor: pointer
+        display: grid
+        position: absolute
+        width: auto
+        top: 50%
+        left: calc(168px + 96px)
+        right: 0px
+        transition: opacity 0.3s
+        z-index: 5
+        pointer-events: none
+
+        +s(m)
+            left: calc(112px + 24px)
+        +s(s)
+            left: 0
+
+        div.group
+            position: relative
+            justify-self: end
+            position: relative
+            width: 130px
+            z-index: 3
+            transition: width 1s
+            transform: translateY(-50%)
+            pointer-events: auto
+            +s(s)
+                width: 40px
+
+        img
+            position: absolute
+            top: 50%
+            left: 16px
+            transform: translateY(-55%)
+            z-index: 1
+            +s(s)
+                left: 11px
+                width: 18px
+                height: 18px
+
+        input
+            position: relative
+            border: 1px solid transparent
+            border-radius: 30px
+            padding: 12px
+            padding-left: 54px
+            padding-right: 0
+            width: 100%
+            color: $pink-dark
+            background: white
+            transition: width 2.5s
+            background: #e798a833
+            transition: all 0.5s
+            +s(s)
+                padding: 9px 10px
+                padding-left: 20px
+
+            &::placeholder
+                opacity: 1
+                transition: all 0.5s
+
+            &:focus::placeholder
+                opacity: 0
+
+            &:focus
+                border-color: $pink-dark
+
+            &::-webkit-search-cancel-button
+                appearance: none
+                cursor: pointer
+                height: 14px
+                width: 14px
+                background-image: url('../images/search_cross.svg')
+                background-size: contain
+                +s(m)
+                    height: 10px
+                    width: 10px
+
+        button
+            position: absolute
+            top: 0
+            right: 0
+            bottom: 0
+            opacity: 0
+            transition: all 1s
+            +s(s)
+                padding-top: 5px
+                padding-bottom: 5px
+
+        &.show
+            opacity: 1
+            pointer-events: auto
+
+            div.group
+                width: 100%
+
+            input
+                background: white
+                color: $brown-light
+                padding-right: 110px
+                border: 1px solid #e798a833
+                +s(s)
+                    padding-left: 30px
+                &::placeholder
+                    opacity: 0.5
+
+            button
+                opacity: 1
+
+            div.backdrop
+                pointer-events: auto
+
+        div.backdrop
+            position: fixed
+            top: 0
+            left: 0
+            right: 0
+            bottom: 0
+            background: transparent
+            z-index: 2
+            pointer-events: none
+
+    button.search
+        background: #e798a833
+        color: $pink-dark
+        padding-left: 20px
+        padding-right: 20px
+
+        span
+            transition: all 0.5s
+
+        svg
+            path
+                transition: all 0.5s
+        &:hover
+            background: #e798a8
+
+            span
+                color: white
+
+            svg
+                path
+                    stroke: white
+
+    div.menu_popup
+        position: fixed
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        background: white
+        z-index: 3
+        font-weight: 400
+        font-size: 16px
+        line-height: 140%
+        color: #4a2c2f
+        padding: 20px
+        opacity: 0
+        pointer-events: none
+        transition: opacity 0.5s
+
+        a:hover
+            color: $pink-dark
+
+        form.subsearch
+            position: relative
+            margin-top: 60px
+            margin-bottom: 20px
+            input
+                border: 1px solid #e798a8
+                border-radius: 30px
+                padding: 10px
+                padding-left: 42px
+                width: 100%
+                &::placeholder
+                    color: #e798a8
+
+                &::-webkit-search-cancel-button
+                    appearance: none
+                    cursor: pointer
+                    height: 14px
+                    width: 14px
+                    background-image: url('../images/search_cross.svg')
+                    background-size: contain
+                    +s(m)
+                        height: 10px
+                        width: 10px
+            img
+                position: absolute
+                top: 50%
+                left: 16px
+                width: 17px
+                height: 17px
+                transform: translateY(-55%)
+
+        div.has-menu
+            div.group
+                cursor: pointer
+                display: grid
+                align-items: center
+                grid-template-columns: 1fr max-content
+                padding-top: 15px
+                padding-bottom: 15px
+                border-top: 1px solid #e798a84d
+            &.open
+                div.group
+                    img
+                        transform: rotate(180deg)
+                div.submenu
+                    grid-template-rows: 1fr
+
+        div.submenu
+            display: grid
+            grid-template-rows: 0fr
+            transition: all 0.5s
+
+            div.overflow
+                overflow: hidden
+
+            div.wrap
+                display: grid
+                grid-gap: 12px
+                padding-bottom: 15px
+
+        & > a
+            display: block
+            padding-top: 15px
+            padding-bottom: 15px
+            border-top: 1px solid #e798a84d
+            &:last-child
+                border-bottom: 1px solid #e798a84d
+
+    &.menu
+        div.mobile
+            div.menu_icon
+                display: none
+            div.cross_icon
+                display: grid
+        div.menu_popup
+            opacity: 1
+            pointer-events: auto
+        form.search
+            z-index: -1

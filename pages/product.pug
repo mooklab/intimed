@@ -1,0 +1,165 @@
+extends ../components/common/pug/_layout.pug
+include ../components/common/pug/_mixins.pug
+
+block links
+    link(rel="stylesheet", href="css/product.css")
+
+block content
+
+    section.product
+        div.container
+
+            div.description.mobile
+                span.type Гель для интимной гигиены
+                h2 Длительное чувство комфорта
+
+                div.reviews
+                    span.weight 200 мл
+                    div.stars
+                        img(src="images/star.svg")
+                        img(src="images/star.svg")
+                        img(src="images/star.svg")
+                        img(src="images/star.svg")
+                        img(src="images/star.svg")
+                    sapn • 247 отзывов
+
+            div.gallery
+                div.tag pH 4,8–5,3
+                div.swiper.previews
+                    div.swiper-wrapper
+                        div.swiper-slide
+                            img(src="images/23.webp").preview
+                        div.swiper-slide
+                            img(src="images/4.webp").preview
+                        div.swiper-slide
+                            img(src="images/23.webp").preview
+                        div.swiper-slide
+                            img(src="images/23.webp").preview
+                        div.swiper-slide
+                            img(src="images/23.webp").preview
+                        div.swiper-slide
+                            img(src="images/23.webp").preview
+                    div.swiper-navigation
+                        div.arrow
+                            include ../images/swiper_arrow.svg
+                        div.arrow
+                            include ../images/swiper_arrow.svg
+                div.swiper.thumbs
+                    div.swiper-wrapper
+                        div.swiper-slide
+                            img(src="images/23.webp").thumb
+                        div.swiper-slide
+                            img(src="images/4.webp").thumb
+                        div.swiper-slide
+                            img(src="images/23.webp").thumb
+                        div.swiper-slide
+                            img(src="images/23.webp").thumb
+                        div.swiper-slide
+                            img(src="images/23.webp").thumb
+                        div.swiper-slide
+                            img(src="images/23.webp").thumb
+                div.swiper-pagination
+
+            div.description
+                span.type Гель для интимной гигиены
+                h2 Длительное чувство комфорта
+
+                div.reviews
+                    span.weight 200 мл
+                    div.stars
+                        img(src="images/star.svg")
+                        img(src="images/star.svg")
+                        img(src="images/star.svg")
+                        img(src="images/star.svg")
+                        img(src="images/star.svg")
+                    sapn • 247 отзывов
+
+                div.text
+                    p Интимная зона – самая нежная зона со своим pH балансом и микрофлорой. Обычные средства - могут спровоцировать появление неприятных ощущений, таких как сухость и зуд. Гель для интимной гигиены обеспечивает деликатный ежедневный уход в течение всего дня.
+                    strong Бессульфатная формула:
+                    ul
+                        li Молочная кислота комплексно содействует поддержанию естественного уровня рН и нормальной микрофлоры, не вызывая чувства сухости.
+                        li Протеины шелка - улучшает влагоудержание на поверхности кожи, что вызывает эффект приятного и длительного ощущения свежести кожи. Делает кожу тактильно приятной и придает ей шелковистую гладкость, обеспечивая при этом эффект легкого лифтинга.
+
+                div.buttons
+                    a(href="#").button Купить на Ozon
+                    a(href="#").button Купить на Wildberries
+
+                div.accordions
+                    div.accordion
+                        div.title
+                            span Состав
+                            img(src="images/accordion_arrow.svg")
+                        div.content
+                            div.overflow
+                                div.wrap
+                                    span Aqua, Cocamidopropyl Betaine, PEG-120 Methyl Glucose Dioleate, Lauryl Glucoside, Disodium Laureth Sulfosuccinate, PEG-7 Glyceryl Cocoate, Glycerin, Sodium Benzoate, Parfum, Citric Acid, Lactic Acid, Allantoin, Sodium Salicylate, Disodium EDTA, Hydrolyzed Milk Protein, Propylene Glycol, Glycyrrhiza Glabra Root Extract, С 12-13 Alkyl Lactate, Triethyl Citrate, Hydrolyzed Silk, Silver Chloride, Potassium Sorbate.
+                    div.accordion
+                        div.title
+                            span Способ применения
+                            img(src="images/accordion_arrow.svg")
+                        div.content
+                            div.overflow
+                                div.wrap
+                                    span Небольшое количество нанести на влажную кожу, вспенить, тщательно смыть теплой водой.
+                    div.accordion
+                        div.title
+                            span Документы на продукт
+                            img(src="images/accordion_arrow.svg")
+                        div.content
+                            div.overflow
+                                div.wrap
+                                    div.documents
+                                        a(href="#") Документ.pdf
+                                        a(href="#") Документ.pdf
+                                        a(href="#") Документ.pdf
+                                        a(href="#") Документ.pdf
+
+    section.why
+        div.container
+
+            div.description
+                h2 Почему выбирают Intimed
+                span Природные ингредиенты работают в гармонии с вашей кожей. Никакой химии, только то, что нужно. Научный подход к интимной гигиене с доказанной эффективностью.
+
+            div.grid
+                div.advantage
+                    h4 Комфорт на каждый день
+                    span Мягкая формула для ежедневного использования без раздражения
+                div.bottle
+                    img(src="images/22.webp").bottle
+                div.advantage
+                    h4 Идеальный pH баланс
+                    span Формула поддерживает естественный pH микрофлоры
+                div.advantage
+                    h4 Протестировано дерматологами
+                    span Безопасно для чувствительной кожи, одобрено специалистами
+                div.advantage
+                    h4 Натуральные экстракты
+                    span Календула, ромашка и алоэ в каждом флаконе
+
+        img(src="images/leaf_2.webp").leaf.first
+        img(src="images/leaf_2.webp").leaf.second
+
+    section.products
+        div.container
+
+            div.title
+                h2 Другие товары серии Daily
+                span Дополните уход средствами из одной линии
+
+
+            div.swiper
+                div.swiper-wrapper
+                    div.swiper-slide
+                        +product('images/8.webp', 'Гель для интимной гигиены', 'Деликатный ежедневный уход')
+                    div.swiper-slide
+                        +product('images/9.webp', 'Гель для интимной гигиены', 'Длительное чувство комфорта')
+                    div.swiper-slide
+                        +product('images/10.webp', 'Гель для интимной гигиены', 'Нежный уход за чувствительной кожей')
+
+            div.swiper-pagination
+
+    include ../components/sections/_where.pug
+    include ../components/sections/_reviews.pug
+    include ../components/sections/_faq.pug

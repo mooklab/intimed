@@ -1,0 +1,36 @@
+@use '../components/common/sass/_mixins' as *
+@use '../components/common/sass/_variables' as *
+
+section.pages
+    margin-top: var(--section-gap)
+    margin-bottom: var(--section-gap)
+
+    div.container
+        display: grid
+        grid-template-columns: repeat(3, 1fr)
+        grid-gap: var(--grid-gap)
+        +s(s)
+            grid-template-columns: repeat(2, 1fr)
+
+        a
+            display: grid
+            align-items: center
+            justify-items: center
+            border: 1px solid rgba(207, 207, 207, 0.5)
+            border-radius: 30px
+            height: 108px
+            background: white
+            +s(m)
+                height: 64px
+                border-radius: 20px
+
+            h5
+                color: #4a2c2f
+                +s(m)
+                    color: $brown-dark
+
+            &:hover
+                border-color: $pink-dark
+
+                h5
+                    color: $pink-dark

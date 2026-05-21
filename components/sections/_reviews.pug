@@ -1,0 +1,62 @@
+mixin review(name)
+    div.review
+        div.text
+            span.title Это единственное средство, после которого кожа не раздражается
+            span.text Это единственное средство, после которого кожа не раздражается и чувствует себя отлично весь день...
+            a.link Читать весь комментарий
+        div.author
+            img(src="images/7.webp", alt="Мария Петрова").preview
+            div.group
+                span.name Мария Петрова
+                span.detaiil Постоянная покупательница, чувствительная кожа
+                div.stars
+                    img(src="images/review_star.svg")
+                    img(src="images/review_star.svg")
+                    img(src="images/review_star.svg")
+                    img(src="images/review_star.svg")
+                    img(src="images/review_star.svg")
+
+section.reviews
+    div.container
+
+        h2 Женщины доверяют #[br]Intimed каждый день
+
+        div.swiper
+            div.swiper-wrapper
+                div.swiper-slide
+                    div.review.big
+                        div.text
+                            h3 «Это единственное средство,после которого кожа не раздражается и чувствует себя отлично весь день»
+                        div.author
+                            img(src="images/7.webp", alt="Мария Петрова").preview
+                            div.group
+                                span.name Мария Петрова
+                                span.detaiil Постоянная покупательница, чувствительная кожа
+                                div.stars
+                                    img(src="images/review_star.svg")
+                                    img(src="images/review_star.svg")
+                                    img(src="images/review_star.svg")
+                                    img(src="images/review_star.svg")
+                                    img(src="images/review_star.svg")
+                div.swiper-slide
+                    +review('Мария Петрова')
+                div.swiper-slide
+                    +review('Мария Петрова')
+                div.swiper-slide
+                    +review('Мария Петрова')
+                div.swiper-slide
+                    +review('Мария Петрова')
+                div.swiper-slide
+                    +review('Мария Петрова')
+
+        div.swiper-pagination
+
+
+
+
+
+
+
+
+
+

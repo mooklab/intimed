@@ -1,0 +1,53 @@
+footer
+    div.container
+
+        div.top
+
+            a(href="#").logotype
+                img(src="images/logotype.svg", alt="Intimed") 
+
+            div.contacts
+                div.list
+                    a(href="#")
+                        img(src="images/footer_phone.svg")
+                        span 8 800 200-10-52
+                    a(href="#")
+                        img(src="images/footer_mail.svg")
+                        span intimedclub@bigcom.ru
+                div.socials
+                    span Мы в социальных сетях:
+                    div.icons
+                        a(href="#")
+                            include ../../images/footer_vk.svg
+
+            menu
+                a(href="#") Главная
+                a(href="#") О бренде
+                a(href="#") Каталог
+                a(href="#") Где купить
+
+            form(action="#") 
+                div.text
+                    h4 Возникли вопросы?
+                    span Мы готовы помочь с любыми вопросами о продукции
+                div.fields
+                    input(type="text", placeholder="Email")
+                    textarea(name="", placeholder="Ваш вопрос")
+                    label.checkbox
+                        input(type="checkbox", required, checked)
+                        span Нажимая на кнопку вы принимаете условия #[a(href="#") политики конфиденциальности]
+                    button 
+                        span Отправить
+                        include ../../images/button_arrow.svg
+
+        div.bottom
+            span.copyright © 2026 ООО «БИГ». Все права защищены.
+            a(href="#") Политика конфиденциальности
+            a(href="#") Условия использования
+            a(href="#") Настройки cookies
+            a(href="#").develop
+                span  Дизайн, разработка сайта
+                img(src="images/mwi.svg", alt="MWI")
+
+        img(src="images/leaf_1.webp").leaf
+

@@ -1,0 +1,76 @@
+@use '../components/common/sass/_mixins' as *
+@use '../components/common/sass/_variables' as *
+
+@use '../components/sections/_where' as *
+@use '../components/sections/_reviews' as *
+@use '../components/sections/_faq' as *
+
+section.catalog
+    margin-top: var(--section-gap)
+    margin-bottom: var(--section-gap)
+
+    div.title
+        display: grid
+        grid-gap: 24px
+        justify-content: center
+        text-align: center
+        margin-top: 20px
+
+    div.subtitle
+        display: grid
+        align-items: center
+        align-content: center
+        grid-template-columns: repeat(2, 1fr)
+        position: relative
+        border-bottom: 1px solid #e798a84d
+        padding-top: 80px
+        padding-bottom: 60px
+        margin-bottom: 30px
+        img.font
+            position: absolute
+            top: 50%
+            left: 0
+            transform: translateY(-50%)
+        div.description
+            position: relative
+            display: grid
+            grid-gap: 10px
+            z-index: 1
+        div.tags
+            display: flex
+            justify-content: end
+            flex-wrap: wrap
+            gap: 10px
+            span
+                background: #e798a826
+                border-radius: 40px
+                padding: 4px 16px
+                height: 30px
+                font-weight: 600
+                line-height: 140%
+                letter-spacing: 0.01em
+                text-align: center
+                color: #e798a8
+                +f(12px, 16px)
+
+    div.list
+        display: grid
+        grid-template-columns: repeat(3, 1fr)
+        grid-gap: var(--grid-gap)
+        +s(s)
+            grid-template-columns: repeat(2, 1fr)
+
+    img.banner
+        width: 100%
+        height: 100%
+        object-fit: cover
+        object-position: left top
+        border-radius: 30px
+
+        &.twocell
+            grid-column: 2 span
+            +s(s)
+                display: none
+
+        &.onecell
+            object-position: right bottom

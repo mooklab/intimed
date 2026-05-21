@@ -1,0 +1,36 @@
+@use '../components/common/sass/_mixins' as *
+@use '../components/common/sass/_variables' as *
+
+section.error
+    margin-top: calc(var(--section-gap) * 2)
+    margin-bottom: calc(var(--section-gap) * 2)
+
+    div.container
+        display: grid
+        justify-content: center
+        justify-items: center
+        text-align: center
+
+    div.preview
+        position: relative
+        margin-bottom: 24px
+        +s(m)
+            margin-bottom: 32px
+
+        img.bg
+            position: absolute
+            top: 50%
+            left: 50%
+            transform: translate(-50%, -50%)
+
+    div.text
+        display: grid
+        grid-gap: 16px
+        max-width: 665px
+        +s(m)
+            grid-gap: 12px
+
+    a.button
+        margin-top: 24px
+        +s(m)
+            margin-top: 20px

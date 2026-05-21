@@ -1,0 +1,338 @@
+@use '../components/common/sass/_mixins' as *
+@use '../components/common/sass/_variables' as *
+
+@use '../components/sections/_where' as *
+@use '../components/sections/_reviews' as *
+@use '../components/sections/_faq' as *
+
+section.product
+    margin-top: 40px
+    margin-bottom: var(--section-gap)
+    div.container
+        display: grid
+        align-items: start
+        grid-template-columns: repeat(2, 1fr)
+        grid-gap: 40px
+        +s(m)
+            grid-template-columns: 1fr
+            grid-gap: 20px
+
+        div.gallery
+            position: relative
+            display: grid
+            grid-gap: 10px
+            +s(m)
+                grid-gap: unset
+
+            img.preview,
+            img.thumb
+                width: 100%
+                height: 100%
+                border-radius: 30px
+                object-fit: cover
+                +s(m)
+                    border-radius: 20px
+
+            div.tag
+                position: absolute
+                top: 30px
+                left: 30px
+                border-radius: 0 10px 10px 10px
+                font-weight: 600
+                line-height: 140%
+                color: #e798a8
+                background: #e798a826
+                padding: 2px 10px
+                z-index: 2
+                +s(m)
+                    top: 20px
+                    left: 20px
+
+        div.previews
+            position: relative
+            border: 1px solid #cfcfcf80
+            border-radius: 30px
+            background: #fff
+            overflow: hidden
+            +s(m)
+                border-radius: 20px
+
+            div.swiper-slide
+                aspect-ratio: 3 / 2
+                +s(s)
+                    aspect-ratio: 1 / 1
+
+        div.thumbs
+            div.swiper-slide
+                cursor: pointer
+                border: 1px solid #cfcfcf80
+                border-radius: 30px
+                background: #fff
+                overflow: hidden
+                aspect-ratio: 12 / 10
+                +s(m)
+                    border-radius: 20px
+                    display: none
+
+                &.swiper-slide-thumb-active
+                    border-color: #e798a8
+
+        div.description
+            span.type
+                display: block
+                margin-bottom: 10px
+
+            h2
+                margin-bottom: 15px
+
+            div.reviews
+                display: grid
+                grid-auto-flow: column
+                grid-auto-columns: max-content
+                align-items: center
+                grid-gap: 5px
+                margin-bottom: 30px
+                span.weight
+                    opacity: 0.6
+                    margin-right: 15px
+                div.stars
+                    display: grid
+                    grid-auto-flow: column
+                    grid-auto-columns: max-content
+                    align-items: center
+                    grid-gap: 3px
+
+            div.text
+                strong
+                    display: block
+                    margin-top: 20px
+                    margin-bottom: 12px
+                    font-weight: 600
+                    +s(m)
+                        margin-bottom: 8px
+
+                ul
+                    display: grid
+                    grid-gap: 12px
+                    li
+                        position: relative
+                        padding-left: 12px
+                        &::after
+                            content: ''
+                            position: absolute
+                            left: 0
+                            top: calc(0.5em + 2px)
+                            display: block
+                            width: 4px
+                            height: 4px
+                            background: $brown-dark
+                            border-radius: 2px
+
+            div.buttons
+                display: grid
+                grid-template-columns: repeat(2, 1fr)
+                grid-gap: 12px
+                margin-top: 32px
+                margin-bottom: 30px
+                +s(xs)
+                    grid-template-columns: 1fr
+                    margin-top: 20px
+                    margin-bottom: 20px
+
+                a.button
+                    width: 100%
+                    padding-top: 20px
+                    padding-bottom: 20px
+                    text-align: center
+                    &:last-child
+                        background: #e798a833
+                        color: $pink-dark
+                        padding-top: 15px
+                        padding-bottom: 15px
+
+            div.accordions
+                display: grid
+                grid-gap: 10px
+                div.accordion
+                    div.title
+                        cursor: pointer
+                        display: grid
+                        grid-template-columns: 1fr max-content
+                        grid-gap: 20px
+                        border-radius: 20px
+                        background: white
+                        padding: 20px 30px
+                        +s(m)
+                            padding: 10px 20px
+                        span
+                            font-weight: 500
+                            +f(14px, 20px)
+                        img
+                            transition: all 0.5s
+                    div.content
+                        display: grid
+                        grid-template-rows: 0fr
+                        transition: all 0.5s
+                        div.overflow
+                            overflow: hidden
+                            div.wrap
+                                padding: 20px 30px 10px
+                                +s(m)
+                                    padding: 12px 20px 8px
+
+                    &.open
+                        div.title
+                            span
+                                color: #e798a8
+                            img
+                                transform: rotate(180deg)
+                        div.content
+                            grid-template-rows: 1fr
+
+                    div.documents
+                        display: grid
+                        grid-gap: 15px
+                        a
+                            text-decoration: underline
+                            &:hover
+                                text-decoration: none
+
+            &.mobile
+                display: none
+                div.reviews
+                    margin: unset
+                +s(m)
+                    display: grid
+
+            &:not(.mobile)
+                +s(m)
+                    span.type, h2, div.reviews
+                        display: none
+
+        div.swiper-pagination
+            position: absolute
+            bottom: 20px
+
+section.why
+    margin-top: calc(var(--section-gap) * 2)
+    margin-bottom: calc(var(--section-gap) * 3)
+    +s(m)
+        margin-top: var(--section-gap)
+        margin-bottom: var(--section-gap)
+
+    div.container
+        display: grid
+        justify-items: center
+        grid-gap: 180px
+        +s(l)
+            grid-gap: 120px
+        +s(m)
+            grid-gap: 60px
+        +s(s)
+            grid-gap: 20px
+
+        div.description
+            display: grid
+            grid-gap: 20px
+            max-width: 780px
+            text-align: center
+            +s(m)
+                grid-gap: 8px
+            +s(s)
+                text-align: left
+
+        div.grid
+            position: relative
+            display: grid
+            grid-template-columns: repeat(3, 1fr)
+            grid-gap: 180px 20px
+            width: 100%
+            max-width: 1420px
+            +s(l)
+                grid-gap: 120px 20px
+            +s(m)
+                grid-gap: 80px 20px
+            +s(s)
+                grid-template-columns: 1fr
+                grid-gap: 20px
+
+            div.advantage
+                display: grid
+                align-content: start
+                grid-gap: 16px
+                +s(m)
+                    grid-gap: 6px
+                span
+                    max-width: 400px
+
+            div.bottle
+                position: relative
+                grid-row: 2 span
+                +s(s)
+                    display: grid
+                    justify-items: center
+                    grid-row: unset
+                    order: -1
+
+                img.bottle
+                    position: absolute
+                    width: 100%
+                    top: 50%
+                    left: 50%
+                    transform: translate(-50%, -50%)
+                    +s(s)
+                        position: static
+                        transform: unset
+                        max-height: 320px
+                        max-width: 100%
+                        width: auto
+
+                img.background
+                    position: absolute
+                    top: 50%
+                    left: 50%
+                    transform: translate(-50%, -50%)
+                    pointer-events: none
+                    +s(s)
+                        top: 30%
+
+    img.first
+        right: 50%
+        margin-right: 10px
+        top: 150px
+        transform: scaleX(-1) rotate(-5deg)
+        +s(l)
+            top: 50px
+        +s(m)
+            display: none
+
+    img.second
+        left: 50%
+        margin-left: 0px
+        top: 150px
+        transform: scale(-1, -1)
+        +s(l)
+            top: 50px
+        +s(m)
+            left: 0
+            margin-left: -150px
+            top: 30px
+            transform: scale(0.9)
+        +s(s)
+            top: -50px
+            margin-left: -250px
+
+section.products
+    margin-top: var(--section-gap)
+    margin-bottom: var(--section-gap)
+
+    div.title
+        display: grid
+        grid-gap: 20px
+        margin-bottom: 30px
+        +s(m)
+            grid-gap: 8px
+            margin-bottom: 12px
+
+    div.swiper-pagination
+        margin-top: 20px

@@ -1,0 +1,282 @@
+section.faq {
+  margin-top: var(--section-gap);
+  margin-bottom: var(--section-gap);
+}
+section.faq div.container {
+  display: grid;
+  grid-gap: 30px;
+}
+@media (max-width: 960px) {
+  section.faq div.container {
+    grid-gap: 20px;
+  }
+}
+section.faq div.text {
+  display: grid;
+  grid-gap: 20px;
+}
+@media (max-width: 960px) {
+  section.faq div.text {
+    grid-gap: 8px;
+  }
+}
+section.faq div.tabs {
+  display: grid;
+  grid-gap: 40px;
+}
+@media (max-width: 960px) {
+  section.faq div.tabs {
+    grid-gap: 20px;
+  }
+}
+section.faq div.tabs div.tabs_captions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 10px;
+}
+@media (max-width: 640px) {
+  section.faq div.tabs div.tabs_captions {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    text-align: center;
+  }
+}
+section.faq div.tabs div.tabs_captions div.tab_caption {
+  cursor: pointer;
+  border: 1px solid #e798a8;
+  border-radius: 30px;
+  padding: 14px 40px;
+  color: #e798a8;
+}
+@media (max-width: 640px) {
+  section.faq div.tabs div.tabs_captions div.tab_caption {
+    padding-left: unset;
+    padding-right: unset;
+  }
+}
+section.faq div.tabs div.tabs_captions div.tab_caption.open {
+  background: #e798a8;
+  color: white;
+}
+section.faq div.tabs div.tab_content {
+  display: none;
+}
+section.faq div.tabs div.tab_content div.accordion div.question {
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  display: grid;
+  grid-template-columns: 1fr -webkit-max-content;
+  grid-template-columns: 1fr max-content;
+  grid-gap: 24px;
+  padding: 30px;
+}
+@media (max-width: 960px) {
+  section.faq div.tabs div.tab_content div.accordion div.question {
+    padding: 15px 20px;
+  }
+}
+section.faq div.tabs div.tab_content div.accordion div.question span {
+  font-weight: 500;
+  line-height: 150%;
+  color: #4a2c2f;
+  font-size: 14px;
+}
+@media (min-width: 480px) {
+  section.faq div.tabs div.tab_content div.accordion div.question span {
+    font-size: calc(0.0048387097 * 100vw + 11.6774193548px);
+  }
+}
+@media (min-width: 1720px) {
+  section.faq div.tabs div.tab_content div.accordion div.question span {
+    font-size: 20px;
+  }
+}
+section.faq div.tabs div.tab_content div.accordion div.question img {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+section.faq div.tabs div.tab_content div.accordion div.answer {
+  display: grid;
+  grid-template-rows: 0fr;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+section.faq div.tabs div.tab_content div.accordion div.answer div.overflow {
+  overflow: hidden;
+}
+section.faq div.tabs div.tab_content div.accordion div.answer div.overflow div.wrap {
+  padding: 30px;
+  border-bottom: 1px solid rgba(231, 152, 168, 0.3019607843);
+}
+@media (max-width: 960px) {
+  section.faq div.tabs div.tab_content div.accordion div.answer div.overflow div.wrap {
+    padding: 10px 20px 15px;
+  }
+}
+section.faq div.tabs div.tab_content div.accordion:nth-child(2n-1) div.question {
+  background: white;
+  border-radius: 16px;
+}
+section.faq div.tabs div.tab_content div.accordion.open div.question span {
+  color: #e798a8;
+}
+section.faq div.tabs div.tab_content div.accordion.open div.question img {
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+section.faq div.tabs div.tab_content div.accordion.open div.answer {
+  grid-template-rows: 1fr;
+}
+section.faq div.tabs div.tab_content.open {
+  display: grid;
+}
+
+section.where {
+  margin-top: var(--section-gap);
+  margin-bottom: var(--section-gap);
+}
+section.where div.container {
+  display: grid;
+  grid-gap: 50px;
+}
+@media (max-width: 960px) {
+  section.where div.container {
+    grid-gap: 40px;
+  }
+}
+section.where div.title {
+  display: grid;
+  grid-gap: 20px;
+}
+@media (max-width: 960px) {
+  section.where div.title {
+    grid-gap: 8px;
+  }
+}
+section.where div.group {
+  display: grid;
+  grid-gap: 20px;
+}
+@media (max-width: 640px) {
+  section.where div.group {
+    grid-gap: 10px;
+  }
+}
+section.where div.list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 20px;
+}
+@media (max-width: 960px) {
+  section.where div.list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 640px) {
+  section.where div.list {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+  }
+}
+section.where div.list a {
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
+  border: 1px solid rgba(207, 207, 207, 0.5);
+  border-radius: 30px;
+  height: 108px;
+  background: white;
+}
+@media (max-width: 960px) {
+  section.where div.list a {
+    height: 64px;
+    border-radius: 20px;
+  }
+}
+section.where div.list a h5 {
+  color: #4a2c2f;
+}
+@media (max-width: 960px) {
+  section.where div.list a h5 {
+    color: #4a2c2f;
+  }
+}
+section.where div.list a:hover {
+  border-color: #e798a8;
+}
+section.where div.list a:hover h5 {
+  color: #e798a8;
+}
+
+section.banner div.container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  position: relative;
+  padding: 45px 60px;
+  border-radius: 40px;
+  background: white;
+  overflow: hidden;
+}
+@media (max-width: 960px) {
+  section.banner div.container {
+    padding: 20px;
+    border-radius: 20px;
+  }
+}
+@media (max-width: 640px) {
+  section.banner div.container {
+    grid-template-columns: 1fr;
+  }
+}
+section.banner div.container div.text {
+  position: relative;
+  display: grid;
+  justify-items: start;
+  z-index: 1;
+}
+@media (max-width: 640px) {
+  section.banner div.container div.text {
+    margin-bottom: 260px;
+  }
+}
+section.banner div.container div.text span.note {
+  margin-top: 16px;
+  margin-bottom: 30px;
+}
+section.banner div.container div.text::after {
+  content: "";
+  position: absolute;
+  top: calc(100% + 20px);
+  left: 0;
+  width: 100%;
+  height: 20px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(rgba(255, 255, 255, 0)));
+  background: linear-gradient(to bottom, #ffffff, rgba(255, 255, 255, 0));
+}
+section.banner div.container img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+}
+@media (max-width: 960px) {
+  section.banner div.container img {
+    right: -100px;
+  }
+}
+@media (max-width: 640px) {
+  section.banner div.container img {
+    top: unset;
+    bottom: 0;
+    height: 260px;
+  }
+}/*# sourceMappingURL=where.css.map */

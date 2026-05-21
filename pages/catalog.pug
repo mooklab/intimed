@@ -1,0 +1,76 @@
+extends ../components/common/pug/_layout.pug
+include ../components/common/pug/_mixins.pug
+
+block links
+    link(rel="stylesheet", href="css/catalog.css")
+
+block content
+    
+    section.catalog
+        div.container
+
+            div.title
+                h1 Три серии ухода
+                span Каждая серия Intimed разработана для разных потребностей и предпочтений вашего ухода
+
+            div.group
+
+                div.subtitle
+                    img(src="images/daily.svg").font
+                    div.description
+                        h2 Intimed Daily
+                        span Для требовательных покупательниц с чувствительной кожей.
+                    div.tags
+                        span Бессульфатная формула
+                        span Ионы серебра в составе
+                        span Целенаправленный уход
+                        span Индивидуальный рН
+
+                div.list
+                    +product('images/8.webp', 'Гель для интимной гигиены', 'Деликатный ежедневный уход')
+                    +product('images/9.webp', 'Гель для интимной гигиены', 'Длительное чувство комфорта')
+                    +product('images/10.webp', 'Гель для интимной гигиены', 'Нежный уход за чувствительной кожей')
+                    +product('images/11.webp', 'Гель для интимной гигиены', 'Увлажняющий эффект')
+                    img(src="images/12.webp").banner.twocell
+
+                div.subtitle
+                    img(src="images/bio.svg").font
+                    div.description
+                        h2 Intimed Bio
+                        span Создан для осознанных покупательниц, проверяющих состав и наличие знака качества.
+                    div.tags
+                        span Более 95% натуральности
+                        span Выполнен по новому ГОСТ
+                        span Состав одобрен ECOGOLIK
+                        span Гипоаллергенная формула
+                        span Для самой нежной кожи от 3-х лет
+
+                div.list
+                    +product('images/13.webp', 'Натуральный гель для интимной гигиены', 'Для взрослых и детей с 3-х лет')
+                    +product('images/14.webp', 'Натуральный гель для интимной гигиены', 'Для чувствительной кожи')
+                    +product('images/15.webp', 'Натуральный гель для интимной гигиены', 'Для мягкого очищения и комфорта')
+
+                div.subtitle
+                    img(src="images/bio.svg").font
+                    div.description
+                        h2 Intimed Bio
+                        span Создан для осознанных покупательниц, проверяющих состав и наличие знака качества.
+                    div.tags
+                        span Более 95% натуральности
+                        span Выполнен по новому ГОСТ
+                        span Состав одобрен ECOGOLIK
+                        span Гипоаллергенная формула
+                        span Для самой нежной кожи от 3-х лет
+
+                div.list
+                    +product('images/16.webp', 'Гель для интимной гигиены', 'Белая лилия и олива')
+                    +product('images/17.webp', 'Гель для интимной гигиены', 'Календула и грейпфрут')
+                    +product('images/18.webp', 'Гель для интимной гигиены', 'Лотос и бамбук')
+                    img(src="images/21.webp").banner.onecell
+                    +product('images/19.webp', 'Гель для интимной гигиены', 'Жасмин и белый чай')
+                    +product('images/20.webp', 'Гель для интимной гигиены', 'Магнолия и фиалка')
+
+
+    include ../components/sections/_where.pug
+    include ../components/sections/_reviews.pug
+    include ../components/sections/_faq.pug

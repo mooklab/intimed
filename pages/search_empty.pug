@@ -1,0 +1,24 @@
+extends ../components/common/pug/_layout.pug
+include ../components/common/pug/_mixins.pug
+
+block links
+    link(rel="stylesheet", href="css/search.css")
+
+block content
+
+    section.search
+        div.container
+
+            h2 Поиск
+
+            form(action="#").search
+                img(src="images/search.svg")
+                input(type="search", placeholder="Поиск")
+                button Поиск
+
+            div.empty
+                h3 Сожалеем, но ничего не найдено.
+                span.note Попробуйте ввести другой запрос, или перейдите в каталог.
+                a(href="#").button 
+                    span Каталог
+                    include ../images/button_arrow.svg

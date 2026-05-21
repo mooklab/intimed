@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Cache-Control" content="no-cache">
+        <meta name="viewport" content="user-scalable=no, width=device-width, height=device-height">
+        <meta name="description" content="Описание сайта">
+        <meta name="keywords" content="Ключевые слова">
+        <title>Туристическая компания &quot;Чудесный Отдых&quot;</title>
+        <meta name="robots" content="index, follow">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="format-detection" content="date=no">
+        <meta name="format-detection" content="address=no">
+        <meta name="format-detection" content="email=no">
+        <meta name="application-name" content="Туристическая компания &quot;Чудесный Отдых&quot;">
+        <meta name="color-scheme" content="only light">
+        <meta property="og:title" content="Туристическая компания &quot;Чудесный Отдых&quot;">
+        <meta property="og:type" content="website">
+        <meta property="og:description" content="Описание сайта">
+        <meta property="og:image" content="Изображение">
+        <meta property="og:site_name" content="Туристическая компания &quot;Чудесный Отдых&quot;">
+        <link rel="icon" href="images/favicon.png" type="image/png">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
+        <link rel="stylesheet" href="css/common.css">
+        <link rel="stylesheet" href="css/search.css">
+        <script defer src="scripts/main.js" type="module"></script>
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <div class="mobile" onclick="this.closest('header').classList.toggle('menu')">
+                    <div class="menu_icon"><svg width="19" height="9" viewBox="0 0 19 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M18.5 4.5H0.5" stroke="#E798A8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M18.5 0.5H0.5" stroke="#E798A8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M18.5 8.5H0.5" stroke="#E798A8" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                    </div>
+                    <div class="cross_icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M15 5L5 15" stroke="#E798A8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M5 5L15 15" stroke="#E798A8" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                    </div>
+                </div><a class="logotype" href="#"><img src="images/logotype.svg" alt="Intimed"></a>
+                <menu><a href="#"><span>О бренде</span></a>
+                    <div class="has-menu">
+                        <div class="group"><span>Каталог</span><img src="images/menu_arrow.svg"></div>
+                        <div class="submenu"><a href="#">Intimed Daily</a><a href="#">Intimed Bio</a><a href="#">Intimed Comfort</a></div>
+                    </div><a href="#"><span>Где купить</span></a>
+                </menu>
+                <form class="search" action="#">
+                    <div class="group" onclick="this.parentNode.classList.add('show')"><img src="images/search.svg">
+                        <input type="search" placeholder="Поиск">
+                        <button>Поиск</button>
+                    </div>
+                    <div class="backdrop" onclick="this.parentNode.classList.remove('show'); this.parentNode.reset()"></div>
+                </form>
+                <div class="menu_popup">
+                    <form class="subsearch" action="#"><img src="images/search.svg">
+                        <input type="search" placeholder="Поиск">
+                    </form><a href="#">О бренде</a>
+                    <div class="has-menu open">
+                        <div class="group" onclick="this.parentNode.classList.toggle('open')"><span>Каталог</span><img src="images/menu_arrow.svg"></div>
+                        <div class="submenu">
+                            <div class="overflow">
+                                <div class="wrap"><a href="#">Intimed Daily</a><a href="#">Intimed Bio</a><a href="#">Intimed Comfort</a></div>
+                            </div>
+                        </div>
+                    </div><a href="#">Где купить</a>
+                </div>
+            </div>
+        </header>
+        <main>
+            <section class="search">
+                <div class="container">
+                    <h2>Поиск</h2>
+                    <form class="search" action="#"><img src="images/search.svg">
+                        <input type="search" placeholder="Поиск">
+                        <button>Поиск</button>
+                    </form>
+                    <div class="empty">
+                        <h3>Сожалеем, но ничего не найдено.</h3><span class="note">Попробуйте ввести другой запрос, или перейдите в каталог.</span><a class="button" href="#"> <span>Каталог</span><svg width="15" height="8" viewBox="0 0 15 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.5 3.18201C0.223858 3.18201 0 3.40586 0 3.68201C0 3.95815 0.223858 4.18201 0.5 4.18201V3.68201V3.18201ZM14.8536 4.03556C15.0488 3.8403 15.0488 3.52372 14.8536 3.32845L11.6716 0.146473C11.4763 -0.0487893 11.1597 -0.0487893 10.9645 0.146473C10.7692 0.341735 10.7692 0.658318 10.9645 0.85358L13.7929 3.68201L10.9645 6.51043C10.7692 6.7057 10.7692 7.02228 10.9645 7.21754C11.1597 7.4128 11.4763 7.4128 11.6716 7.21754L14.8536 4.03556ZM0.5 3.68201V4.18201H14.5V3.68201V3.18201H0.5V3.68201Z" fill="white"/>
+</svg>
+</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <div class="container">
+                <div class="top"><a class="logotype" href="#"><img src="images/logotype.svg" alt="Intimed"></a>
+                    <div class="contacts">
+                        <div class="list"><a href="#"><img src="images/footer_phone.svg"><span>8 800 200-10-52</span></a><a href="#"><img src="images/footer_mail.svg"><span>intimedclub@bigcom.ru</span></a></div>
+                        <div class="socials"><span>Мы в социальных сетях:</span>
+                            <div class="icons"><a href="#"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_2011_108)">
+<mask id="mask0_2011_108" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="20" height="20">
+<path d="M20 0H0V20H20V0Z" fill="white"/>
+</mask>
+<g mask="url(#mask0_2011_108)">
+<path d="M9.5896 20H10.4224C14.9432 20 17.204 20 18.608 18.596C20.012 17.192 20 14.932 20 10.4224V9.5776C20 5.0688 20 2.80801 18.608 1.40401C17.216 4.05312e-06 14.9432 0 10.4224 0H9.5896C5.068 0 2.808 4.05312e-06 1.404 1.40401C-8.34465e-07 2.80801 0 5.0672 0 9.5776V10.4224C0 14.932 -8.34465e-07 17.192 1.404 18.596C2.808 20 5.068 20 9.5896 20Z" fill="#E798A8"/>
+<path d="M10.732 14.4198C6.22235 14.4198 3.48555 11.291 3.37915 6.0918H5.66315C5.73435 9.911 7.47195 11.5318 8.80395 11.8622V6.0918H10.9936V9.387C12.2784 9.2446 13.6224 7.7454 14.0752 6.0918H16.228C15.8832 8.1262 14.42 9.6254 13.3848 10.2438C14.42 10.7438 16.0856 12.0526 16.728 14.4198H14.3608C13.8608 12.8374 12.6352 11.6118 10.9936 11.4454V14.4198H10.732Z" fill="white"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_2011_108">
+<rect width="20" height="20" fill="white"/>
+</clipPath>
+</defs>
+</svg>
+</a></div>
+                        </div>
+                    </div>
+                    <menu><a href="#">Главная</a><a href="#">О бренде</a><a href="#">Каталог</a><a href="#">Где купить</a></menu>
+                    <form action="#"> 
+                        <div class="text">
+                            <h4>Возникли вопросы?</h4><span>Мы готовы помочь с любыми вопросами о продукции</span>
+                        </div>
+                        <div class="fields">
+                            <input type="text" placeholder="Email">
+                            <textarea name="" placeholder="Ваш вопрос"></textarea>
+                            <label class="checkbox">
+                                <input type="checkbox" required checked><span>Нажимая на кнопку вы принимаете условия <a href="#">политики конфиденциальности</a></span>
+                            </label>
+                            <button> <span>Отправить</span><svg width="15" height="8" viewBox="0 0 15 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.5 3.18201C0.223858 3.18201 0 3.40586 0 3.68201C0 3.95815 0.223858 4.18201 0.5 4.18201V3.68201V3.18201ZM14.8536 4.03556C15.0488 3.8403 15.0488 3.52372 14.8536 3.32845L11.6716 0.146473C11.4763 -0.0487893 11.1597 -0.0487893 10.9645 0.146473C10.7692 0.341735 10.7692 0.658318 10.9645 0.85358L13.7929 3.68201L10.9645 6.51043C10.7692 6.7057 10.7692 7.02228 10.9645 7.21754C11.1597 7.4128 11.4763 7.4128 11.6716 7.21754L14.8536 4.03556ZM0.5 3.68201V4.18201H14.5V3.68201V3.18201H0.5V3.68201Z" fill="white"/>
+</svg>
+
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="bottom"><span class="copyright">© 2026 ООО «БИГ». Все права защищены.</span><a href="#">Политика конфиденциальности</a><a href="#">Условия использования</a><a href="#">Настройки cookies</a><a class="develop" href="#"><span> Дизайн, разработка сайта</span><img src="images/mwi.svg" alt="MWI"></a></div><img class="leaf" src="images/leaf_1.webp">
+            </div>
+        </footer>
+    </body>
+</html>

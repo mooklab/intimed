@@ -1,0 +1,46 @@
+extends ../components/common/pug/_layout.pug
+include ../components/common/pug/_mixins.pug
+
+block links
+    link(rel="stylesheet", href="css/where.css")
+
+block content
+
+    section.where
+        div.container
+
+            div.title
+                h2 Где купить Intimed
+                span Найдите продукты Intimed на ведущих маркетплейсах России с быстрой доставкой
+
+            div.group
+                h3 Офлайн
+                div.list
+                    a(href="#"): h5 Улыбка радуги
+                    a(href="#"): h5 РИВ ГОШ
+                    a(href="#"): h5 ЛЭТУАЛЬ
+                    a(href="#"): h5 ГЛОБУС
+                    a(href="#"): h5 М.Косметик
+
+            div.group
+                h3 Онлайн
+                div.list
+                    a(href="#"): h5 Улыбка радуги
+                    a(href="#"): h5 РИВ ГОШ
+                    a(href="#"): h5 ЛЭТУАЛЬ
+                    a(href="#"): h5 ГЛОБУС
+                    a(href="#"): h5 М.Косметик
+
+    section.banner
+        div.container
+
+            div.text
+                h2 Начните заботиться правильно
+                span.note Откройте полный каталог серий Intimed и найдите идеальный уход для себя
+                a(href="#").button 
+                    span Каталог
+                    include ../images/button_arrow.svg
+
+            img(src="images/24.webp", alt="Начните заботиться правильно")
+
+    include ../components/sections/_faq.pug

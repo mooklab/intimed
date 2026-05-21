@@ -1,0 +1,148 @@
+@use '../../components/common/sass/_variables' as *
+@use '../../components/common/sass/_mixins' as *
+
+footer
+    overflow: hidden
+
+    div.top
+        display: grid
+        align-items: start
+        grid-template-columns: repeat(12, 1fr)
+        grid-template-areas: 'Logotype Menu Form' 'Contacts Menu Form'
+        grid-gap: 36px 20px
+        padding-bottom: 50px
+        +s(m)
+            grid-template-columns: repeat(2, 1fr)
+            grid-template-areas: 'Logotype Form' 'Menu Form' 'Contacts Form'
+        +s(s)
+            grid-template-columns: 1fr
+            grid-template-areas: 'Logotype' 'Menu' 'Contacts' 'Form'
+            grid-gap: 26px
+
+        a.logotype
+            grid-area: Logotype
+            grid-column: 2 span
+            +s(l)
+                grid-column: 3 span
+            +s(m)
+                grid-column: unset
+                img
+                    width: 112px
+
+        menu
+            grid-area: Menu
+            grid-column: 5 span
+            display: grid
+            grid-template-columns: repeat(4, 1fr)
+            grid-gap: var(--grid-gap)
+            +s(l)
+                grid-template-columns: repeat(2, 1fr)
+                grid-column: 4 span
+            +s(m)
+                grid-column: unset
+                grid-template-columns: 1fr
+                grid-gap: unset
+                a
+                    padding-top: 15px
+                    padding-bottom: 15px
+                    border-bottom: 1px solid #e798a84d
+
+        form
+            grid-area: Form
+            grid-column: 5 span
+            +s(m)
+                grid-column: unset
+
+            div.text
+                display: grid
+                grid-gap: 16px
+                margin-bottom: 24px
+                +s(m)
+                    grid-gap: 8px
+
+            div.fields
+                display: grid
+                justify-items: start
+                grid-gap: 10px
+
+                input
+                    width: 100%
+
+                textarea
+                    width: 100%
+
+                button
+                    margin-top: 14px
+                    +s(m)
+                        margin-top: 6px
+
+        div.contacts
+            grid-area: Contacts
+            grid-column: 2 span
+            display: grid
+            grid-gap: 30px
+            +s(m)
+                grid-column: unset
+
+            div.list
+                display: grid
+                grid-gap: 4px
+                a
+                    display: grid
+                    align-items: center
+                    grid-template-columns: max-content 1fr
+                    grid-gap: 10px
+                    text-decoration: underline
+                    &:hover
+                        text-decoration: none
+
+            div.socials
+                display: grid
+                grid-gap: 10px
+                div.icons
+                    display: flex
+                    grid-gap: 10px
+
+    div.bottom
+        padding-top: 30px
+        padding-bottom: var(--section-gap)
+        border-top: 1px solid #e798a833
+        position: relative
+        display: grid
+        grid-auto-flow: column
+        grid-auto-columns: auto
+        justify-content: space-between
+        grid-gap: 20px
+        +s(l)
+            display: grid
+            grid-auto-flow: unset
+            grid-auto-columns: 1fr
+            grid-template-columns: repeat(3, 1fr)
+            justify-content: start
+            grid-gap: 10px
+        +s(s)
+            grid-template-columns: 1fr
+
+        span.copyright
+            +s(l)
+                grid-column: 3 span
+            +s(s)
+                grid-column: 1 span
+
+        a.develop
+            +s(l)
+                grid-column: 3 span
+            +s(s)
+                grid-column: 1 span
+
+    img.leaf
+        left: 50%
+        margin-left: 530px
+        top: -300px
+        transform: rotate(70deg)
+        z-index: 10
+        +s(l)
+            margin-left: -260px
+            top: unset
+            bottom: -20px
+            transform: scale(0.8)

@@ -1,0 +1,143 @@
+extends ../components/common/pug/_layout.pug
+include ../components/common/pug/_mixins.pug
+
+block links
+    link(rel="stylesheet", href="css/index.css")
+
+block content
+    
+    section.main
+        div.container
+
+            div.text
+                h1 Выберите свою серию
+                span Мы с особым вниманием создали три уникальные линейки продуктов, чтобы каждая женщина без труда нашла средство, идеально подходящее именно ей — по типу кожи, предпочтениям и образу жизни, гарантируя полное удобство и уверенность на каждый день.
+
+            div.swiper
+                div.swiper-wrapper
+                    div.swiper-slide
+                        a(href="#").product
+                            div.preview
+                                div.count 4 товара
+                                img(src="images/1.webp", alt="Intimed Daily").preview
+                            div.description
+                                div.title
+                                    h3 Intimed #[b Daily]
+                                    span Для требовательных покупательниц с чувствительной кожей
+
+                                ul
+                                    li  • Целенаправленный уход для решения женских задач
+                                    li  • Бессульфатная формула для чувствительной кожи
+                                    li  • Индивидуальный рН для баланса микрофлоры
+                                    li  • Ионы серебра в составе
+                                hr
+                                span.link
+                                    span Смотреть линейку
+                                    include ../images/button_arrow.svg
+                    div.swiper-slide
+                        a(href="#").product
+                            div.preview
+                                div.count 3 товара
+                                img(src="images/2.webp", alt="Intimed Daily").preview
+                            div.description
+                                div.title
+                                    h3 Intimed #[b Bio]
+                                    span Создан для осознанных покупательниц, проверяющих состав и наличие знака качества
+
+                                ul
+                                    li  • Доверие к природе, подтверждённое стандартом
+                                    li  • Более 95% натуральности по новому ГОСТ
+                                    li  • Состав одобрен ECOGOLIK
+                                    li  • Гипоаллергенная формула для самой нежной кожи от 3-х лет
+                                hr
+                                span.link
+                                    span Смотреть линейку
+                                    include ../images/button_arrow.svg
+                    div.swiper-slide
+                        a(href="#").product
+                            div.preview
+                                div.count 5 товара
+                                img(src="images/3.webp", alt="Intimed Daily").preview
+                            div.description
+                                div.title
+                                    h3 Intimed #[b Comfort]
+                                    span Для практичных покупательниц, ценящих разумное соотношение цены и качества
+
+                                ul
+                                    li  • Ежедневный уход с натуральными экстрактами
+                                    li  • Практичный объём на выбор: 300 мл удобно для себя, 500 мл выгодно для семьи.
+                                    li  • Базовый pH 5.5 для поддержания естественного баланса
+                                hr
+                                span.link
+                                    span Смотреть линейку
+                                    include ../images/button_arrow.svg
+
+            div.swiper-pagination
+
+        img(src="images/leaf_2.webp").leaf.first
+        img(src="images/leaf_2.webp").leaf.second
+        img(src="images/leaf_1.webp").leaf.third
+        img(src="images/leaf_1.webp").leaf.fourth
+
+    section.banners
+        div.container
+            div.swiper
+                div.swiper-wrapper
+                    div.swiper-slide
+                        img(src="images/25.webp").desktop
+                        img(src="images/26.webp").mobile
+                    div.swiper-slide
+                        img(src="images/25.webp").desktop
+                        img(src="images/26.webp").mobile
+                    div.swiper-slide
+                        img(src="images/25.webp").desktop
+                        img(src="images/26.webp").mobile
+            div.swiper-pagination
+            div.swiper-navigation
+                div.arrow
+                    include ../images/swiper_arrow.svg
+                div.arrow
+                    include ../images/swiper_arrow.svg
+
+    section.about
+        div.container
+
+            div.preview
+                img(src="images/4.webp")
+            div.text
+                img(src="images/intimed.svg").intimed
+                h2 О бренде
+                span.big Intimed — это бренд для тех, кто заботится об интимном здоровье каждый день.
+                span Мы превращаем уход в простую и естественную привычку, которая дарит свежесть, уверенность и комфорт. Экосистема «Белая линия Intimed» — это полноценная трехуровневая система, которая закрывает потребности женщин, от экономной ежедневной заботы до уникальной формулы деликатного ухода. Intimed подходит женщинам на разных этапах жизни, делая заботу о себе осознанной и доступной.
+
+        img(src="images/leaf_1.webp").leaf
+
+    section.why
+        div.container
+
+            div.description
+                h2 Почему выбирают Intimed
+                span Природные ингредиенты работают в гармонии с вашей кожей. Никакой химии, только то, что нужно. Научный подход к интимной гигиене с доказанной эффективностью.
+
+            div.grid
+                div.advantage
+                    h4 Комфорт на каждый день
+                    span Мягкая формула для ежедневного использования без раздражения
+                div.bottle
+                    img(src="images/5.webp").bottle
+                div.advantage
+                    h4 Идеальный pH баланс
+                    span Формула поддерживает естественный pH микрофлоры
+                div.advantage
+                    h4 Протестировано дерматологами
+                    span Безопасно для чувствительной кожи, одобрено специалистами
+                div.advantage
+                    h4 Натуральные экстракты
+                    span Календула, ромашка и алоэ в каждом флаконе
+
+        img(src="images/leaf_2.webp").leaf.first
+        img(src="images/leaf_2.webp").leaf.second
+
+    include ../components/sections/_where.pug
+    include ../components/sections/_reviews.pug
+    include ../components/sections/_faq.pug

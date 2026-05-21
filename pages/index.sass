@@ -1,0 +1,326 @@
+@use '../components/common/sass/_mixins' as *
+@use '../components/common/sass/_variables' as *
+
+@use '../components/sections/_where' as *
+@use '../components/sections/_reviews' as *
+@use '../components/sections/_faq' as *
+
+section.main
+    margin-top: var(--section-gap)
+    margin-bottom: var(--section-gap)
+    div.container
+        display: grid
+        justify-items: center
+        grid-gap: 42px
+        +s(m)
+            grid-gap: 20px
+
+        div.text
+            display: grid
+            grid-gap: 24px
+            max-width: 800px
+            text-align: center
+            +s(m)
+                grid-gap: 8px
+
+        div.swiper
+            overflow: visible
+
+        a.product
+            display: grid
+            grid-template-rows: max-content 1fr
+            height: 100%
+            position: relative
+            border-radius: 30px
+            background: white
+            transition: box-shadow 0.5s
+            +s(m)
+                border-radius: 20px
+
+            div.count
+                display: grid
+                align-items: center
+                justify-items: center
+                position: absolute
+                top: 30px
+                left: 30px
+                border-radius: 0 10px 10px 10px
+                padding: 2px 12px
+                background: #e798a826
+                font-weight: 600
+                line-height: 140%
+                color: #e798a8
+                +f(12px, 18px)
+                +s(m)
+                    top: 15px
+                    left: 15px
+
+            img.preview
+                width: 100%
+
+            div.description
+                display: grid
+                grid-template-rows: max-content 1fr
+                grid-auto-flow: row
+                grid-auto-rows: max-content
+                padding: 30px
+                +s(m)
+                    padding: 15px
+
+                div.title
+                    display: grid
+                    grid-gap: 12px
+                    +s(m)
+                        grid-gap: 5px
+
+                    span
+                        text-transform: uppercase
+                        +f(12px, 16px)
+
+                ul
+                    margin-top: 16px
+                    margin-bottom: 20px
+                    +s(m)
+                        margin-top: 8px
+                        margin-bottom: 15px
+                    li
+                        line-height: 180%
+                        +f(12px, 16px)
+
+                hr
+                    width: 100%
+                    height: 1px
+                    background: #e798a833
+
+                span.link
+                    margin-top: 20px
+                    +s(m)
+                        margin-top: 15px
+
+            &:hover
+                box-shadow: 2px 6px 14px 0 #ffe0e71a, 6px 24px 25px 0 #ffe0e717, 14px 55px 34px 0 #e798a80d, 24px 97px 40px 0 #ffe0e703, 38px 152px 44px 0 #ffe0e700
+
+    img.first
+        right: 50%
+        margin-right: 350px
+        top: -100px
+        transform: rotate(10deg)
+        +s(m)
+            display: none
+    img.second
+        left: 50%
+        margin-left: 150px
+        top: -50px
+        +s(m)
+            margin-left: -440px
+            top: -290px
+    img.third
+        right: 50%
+        margin-right: 550px
+        bottom: 0px
+        transform: rotate(-35deg)
+    img.fourth
+        left: 50%
+        margin-left: 400px
+        bottom: 0px
+        transform: rotate(-20deg)
+
+section.banners
+    div.container
+        position: relative
+    img.desktop
+        display: block
+        width: 100%
+        border-radius: 30px
+        +s(s)
+            display: none
+    img.mobile
+        display: none
+        width: 100%
+        border-radius: 20px
+        +s(s)
+            display: block
+    div.arrow
+        background: #E798A8
+        svg
+            path
+                fill: white
+    div.swiper-navigation
+        +s(s)
+            display: none
+    div.swiper-pagination
+        margin-top: 20px
+        display: none
+        +s(s)
+            display: grid
+
+section.about
+    margin-top: var(--section-gap)
+    margin-bottom: var(--section-gap)
+    div.container
+        display: grid
+        grid-template-columns: repeat(2, 1fr)
+        grid-gap: 20px
+        +s(m)
+            grid-template-columns: 1fr
+
+        div.preview
+            position: relative
+            height: 712px
+            border-radius: 30px
+            overflow: hidden
+            +s(m)
+                display: none
+
+            img
+                position: absolute
+                top: 0
+                left: 0
+                width: 100%
+                height: 100%
+                object-fit: cover
+
+        div.text
+            position: relative
+            display: grid
+            align-content: end
+            grid-gap: 20px
+            background: white
+            border-radius: 30px
+            padding: 50px
+            +s(m)
+                padding: 20px
+
+            img.intimed
+                position: absolute
+                top: 25px
+                left: 25px
+                right: 25px
+                width: calc(100% - 50px)
+                object-fit: contain
+                +s(m)
+                    position: static
+                    width: 100%
+                    margin-bottom: 16px
+
+            span.big
+                font-weight: 500
+                font-size: 20px
+                max-width: 480px
+
+    img.leaf
+        left: 50%
+        margin-left: 530px
+        bottom: 80px
+        transform: rotate(70deg)
+        z-index: 10
+        +s(l)
+            margin-left: unset
+            bottom: -250px
+
+section.why
+    margin-top: calc(var(--section-gap) * 2)
+    margin-bottom: calc(var(--section-gap) * 3)
+    +s(m)
+        margin-top: var(--section-gap)
+        margin-bottom: var(--section-gap)
+
+    div.container
+        display: grid
+        justify-items: center
+        grid-gap: 180px
+        +s(l)
+            grid-gap: 120px
+        +s(m)
+            grid-gap: 60px
+        +s(s)
+            grid-gap: 20px
+
+        div.description
+            display: grid
+            grid-gap: 20px
+            max-width: 780px
+            text-align: center
+            +s(m)
+                grid-gap: 8px
+            +s(s)
+                text-align: left
+
+        div.grid
+            position: relative
+            display: grid
+            grid-template-columns: repeat(3, 1fr)
+            grid-gap: 180px 20px
+            width: 100%
+            max-width: 1420px
+            +s(l)
+                grid-gap: 120px 20px
+            +s(m)
+                grid-gap: 80px 20px
+            +s(s)
+                grid-template-columns: 1fr
+                grid-gap: 20px
+
+            div.advantage
+                display: grid
+                align-content: start
+                grid-gap: 16px
+                +s(m)
+                    grid-gap: 6px
+                span
+                    max-width: 400px
+
+            div.bottle
+                position: relative
+                grid-row: 2 span
+                +s(s)
+                    display: grid
+                    justify-items: center
+                    grid-row: unset
+                    order: -1
+
+                img.bottle
+                    position: absolute
+                    width: 100%
+                    top: 50%
+                    left: 50%
+                    transform: translate(-50%, -50%)
+                    +s(s)
+                        position: static
+                        transform: unset
+                        max-height: 320px
+                        max-width: 100%
+                        width: auto
+
+                img.background
+                    position: absolute
+                    top: 50%
+                    left: 50%
+                    transform: translate(-50%, -50%)
+                    +s(s)
+                        top: 30%
+
+    img.first
+        right: 50%
+        margin-right: 10px
+        top: 150px
+        transform: scaleX(-1) rotate(-5deg)
+        +s(l)
+            top: 50px
+        +s(m)
+            display: none
+    img.second
+        left: 50%
+        margin-left: 0px
+        top: 150px
+        transform: scale(-1, -1)
+        +s(l)
+            top: 50px
+        +s(m)
+            left: 0
+            margin-left: -150px
+            top: 30px
+            transform: scale(0.9)
+        +s(s)
+            top: -50px
+            margin-left: -250px

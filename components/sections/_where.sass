@@ -1,0 +1,69 @@
+@use '../../components/common/sass/_variables' as *
+@use '../../components/common/sass/_mixins' as *
+
+section.where
+    margin-top: var(--section-gap)
+    margin-bottom: var(--section-gap)
+
+    div.container
+        display: grid
+        grid-gap: 30px
+        +s(m)
+            grid-gap: 20px
+
+    div.text
+        display: grid
+        grid-gap: 20px
+        +s(m)
+            grid-gap: 8px
+
+    div.tabs
+        display: grid
+        grid-gap: 40px
+        +s(m)
+            grid-gap: 20px
+
+        div.tabs_captions
+            display: grid
+            grid-auto-flow: column
+            grid-auto-columns: max-content
+            grid-gap: 10px
+            div.tab_caption
+                cursor: pointer
+                border: 1px solid #e798a8
+                border-radius: 30px
+                padding: 14px 40px
+                color: #e798a8
+                &.open
+                    background: #e798a8
+                    color: white
+
+        div.tab_content
+            display: none
+            grid-gap: 20px
+
+            a
+                display: grid
+                align-items: center
+                justify-items: center
+                border: 1px solid rgba(207, 207, 207, 0.5)
+                border-radius: 30px
+                height: 108px
+                background: white
+                +s(m)
+                    height: 64px
+                    border-radius: 20px
+
+                h5
+                    color: #cfcfcf
+                    +s(m)
+                        color: $brown-dark
+
+                &:hover
+                    border-color: $pink-dark
+
+                    h5
+                        color: $pink-dark
+
+            &.open
+                display: grid

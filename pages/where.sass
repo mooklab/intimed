@@ -1,0 +1,107 @@
+@use '../components/common/sass/_mixins' as *
+@use '../components/common/sass/_variables' as *
+
+@use '../components/sections/_faq' as *
+
+section.where
+    margin-top: var(--section-gap)
+    margin-bottom: var(--section-gap)
+
+    div.container
+        display: grid
+        grid-gap: 50px
+        +s(m)
+            grid-gap: 40px
+
+    div.title
+        display: grid
+        grid-gap: 20px
+        +s(m)
+            grid-gap: 8px
+
+    div.group
+        display: grid
+        grid-gap: 20px
+        +s(s)
+            grid-gap: 10px
+
+    div.list
+        display: grid
+        grid-template-columns: repeat(5, 1fr)
+        grid-gap: 20px
+        +s(m)
+            grid-template-columns: repeat(3, 1fr)
+        +s(s)
+            grid-template-columns: repeat(2, 1fr)
+            grid-gap: 10px
+
+        a
+            display: grid
+            align-items: center
+            justify-items: center
+            border: 1px solid rgba(207, 207, 207, 0.5)
+            border-radius: 30px
+            height: 108px
+            background: white
+            +s(m)
+                height: 64px
+                border-radius: 20px
+
+            h5
+                color: #4a2c2f
+                +s(m)
+                    color: $brown-dark
+
+            &:hover
+                border-color: $pink-dark
+
+                h5
+                    color: $pink-dark
+
+section.banner
+    div.container
+        display: grid
+        grid-template-columns: repeat(2, 1fr)
+        position: relative
+        padding: 45px 60px
+        border-radius: 40px
+        background: white
+        overflow: hidden
+        +s(m)
+            padding: 20px
+            border-radius: 20px
+        +s(s)
+            grid-template-columns: 1fr
+
+        div.text
+            position: relative
+            display: grid
+            justify-items: start
+            z-index: 1
+            +s(s)
+                margin-bottom: 260px
+
+            span.note
+                margin-top: 16px
+                margin-bottom: 30px
+
+            &::after
+                content: ''
+                position: absolute
+                top: calc(100% + 20px)
+                left: 0
+                width: 100%
+                height: 20px
+                background: linear-gradient(to bottom, #ffffff, #ffffff00)
+
+        img
+            position: absolute
+            top: 0
+            right: 0
+            height: 100%
+            +s(m)
+                right: -100px
+            +s(s)
+                top: unset
+                bottom: 0
+                height: 260px

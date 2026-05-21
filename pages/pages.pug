@@ -1,0 +1,18 @@
+extends ../components/common/pug/_layout.pug
+include ../components/common/pug/_mixins.pug
+
+block links
+    link(rel="stylesheet", href="css/pages.css")
+
+block content
+
+    section.pages
+        div.container
+
+            a(href="index.html", target="blank") Главная
+            a(href="catalog.html", target="blank") Каталог
+            a(href="product.html", target="blank") Карточка
+            a(href="where.html", target="blank") Где купить
+            a(href="search.html", target="blank") Поиск
+            a(href="search_empty.html", target="blank") Поиск - пустой
+            a(href="404.html", target="blank") 404
