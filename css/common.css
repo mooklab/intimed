@@ -491,6 +491,11 @@ label.checkbox span::before {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
+@media (max-width: 640px) {
+  label.checkbox span::before {
+    top: 0.4em;
+  }
+}
 label.checkbox span::after {
   content: "";
   position: absolute;
@@ -501,10 +506,25 @@ label.checkbox span::after {
   height: 14px;
   background-image: url(../images/checkbox_tick.svg);
 }
+@media (max-width: 640px) {
+  label.checkbox span::after {
+    top: 0.4em;
+  }
+}
 
 div.swiper {
+  opacity: 0;
   width: 100%;
   min-width: 0;
+  -webkit-transition: opacity 0.1s;
+  transition: opacity 0.1s;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+div.swiper.show {
+  opacity: 1;
 }
 
 div.swiper-pagination {
@@ -517,6 +537,9 @@ div.swiper-pagination {
           justify-content: center;
   grid-gap: 4px;
   position: static;
+}
+div.swiper-pagination.swiper-pagination-lock {
+  display: none;
 }
 div.swiper-pagination span {
   display: block;
@@ -598,6 +621,8 @@ a.product {
   padding: 40px;
   border-radius: 30px;
   background: white;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 @media (max-width: 960px) {
   a.product {
@@ -638,6 +663,7 @@ a.product div.preview img {
   max-width: 100%;
   padding: 15px;
   padding-top: 60px;
+  margin: 0 auto;
 }
 @media (max-width: 960px) {
   a.product div.preview img {
@@ -657,6 +683,17 @@ a.product div.description span.type {
 }
 a.product div.description h4 {
   margin-bottom: 10px;
+  font-size: 14px;
+}
+@media (min-width: 480px) {
+  a.product div.description h4 {
+    font-size: calc(0.0080645161 * 100vw + 10.1290322581px);
+  }
+}
+@media (min-width: 1720px) {
+  a.product div.description h4 {
+    font-size: 24px;
+  }
 }
 @media (max-width: 640px) {
   a.product div.description h4 {
@@ -665,6 +702,27 @@ a.product div.description h4 {
 }
 a.product div.description span.weight {
   color: #6d454d;
+  font-size: 12px;
+}
+@media (min-width: 480px) {
+  a.product div.description span.weight {
+    font-size: calc(0.0048387097 * 100vw + 9.6774193548px);
+  }
+}
+@media (min-width: 1720px) {
+  a.product div.description span.weight {
+    font-size: 18px;
+  }
+}
+a.product:hover {
+  -webkit-box-shadow: 2px 6px 14px 0 rgba(255, 224, 231, 0.1019607843), 6px 24px 25px 0 rgba(255, 224, 231, 0.0901960784), 14px 55px 34px 0 rgba(231, 152, 168, 0.0509803922), 24px 97px 40px 0 rgba(255, 224, 231, 0.0117647059), 38px 152px 44px 0 rgba(255, 224, 231, 0);
+          box-shadow: 2px 6px 14px 0 rgba(255, 224, 231, 0.1019607843), 6px 24px 25px 0 rgba(255, 224, 231, 0.0901960784), 14px 55px 34px 0 rgba(231, 152, 168, 0.0509803922), 24px 97px 40px 0 rgba(255, 224, 231, 0.0117647059), 38px 152px 44px 0 rgba(255, 224, 231, 0);
+}
+@media (max-width: 960px) {
+  a.product:hover {
+    -webkit-box-shadow: unset;
+            box-shadow: unset;
+  }
 }
 
 img.leaf {
@@ -803,7 +861,6 @@ header a.logotype {
 @media (max-width: 640px) {
   header a.logotype {
     text-align: center;
-    margin-right: 40px;
   }
 }
 @media (max-width: 960px) {
@@ -820,7 +877,7 @@ header menu {
       -ms-flex-pack: center;
           justify-content: center;
   grid-gap: 72px;
-  margin-right: 130px;
+  margin-right: 95px;
   z-index: 1;
 }
 @media (max-width: 1280px) {
@@ -901,8 +958,8 @@ header form.search {
   top: 50%;
   left: 264px;
   right: 0px;
-  -webkit-transition: opacity 0.3s;
-  transition: opacity 0.3s;
+  -webkit-transition: opacity 0.3s, padding 0.3s;
+  transition: opacity 0.3s, padding 0.3s;
   z-index: 5;
   pointer-events: none;
 }
@@ -917,6 +974,7 @@ header form.search {
   }
 }
 header form.search div.group {
+  cursor: pointer;
   position: relative;
   justify-self: end;
   position: relative;
@@ -933,6 +991,9 @@ header form.search div.group {
   header form.search div.group {
     width: 40px;
   }
+}
+header form.search div.group > * {
+  pointer-events: none;
 }
 header form.search img {
   position: absolute;
@@ -1049,8 +1110,17 @@ header form.search.show {
   opacity: 1;
   pointer-events: auto;
 }
+@media (max-width: 960px) {
+  header form.search.show {
+    padding-right: 48px;
+  }
+}
 header form.search.show div.group {
+  cursor: auto;
   width: 100%;
+}
+header form.search.show div.group > * {
+  pointer-events: auto;
 }
 header form.search.show input {
   background: white;
@@ -1084,6 +1154,12 @@ header form.search.show button {
 header form.search.show div.backdrop {
   pointer-events: auto;
 }
+@media (max-width: 960px) {
+  header form.search.show + div.form_cross {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
 header form.search div.backdrop {
   position: fixed;
   top: 0;
@@ -1093,6 +1169,25 @@ header form.search div.backdrop {
   background: transparent;
   z-index: 2;
   pointer-events: none;
+}
+header div.form_cross {
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
+  border-radius: 30px;
+  width: 33px;
+  height: 33px;
+  background: rgba(231, 152, 168, 0.2);
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+header div.form_cross svg {
+  width: 20px;
+  height: 20px;
 }
 header button.search {
   background: rgba(231, 152, 168, 0.2);
@@ -1224,6 +1319,10 @@ header div.menu_popup div.submenu div.wrap {
   grid-gap: 12px;
   padding-bottom: 15px;
 }
+header div.menu_popup div.submenu a {
+  font-size: 14px;
+  font-weight: 500;
+}
 header div.menu_popup > a {
   display: block;
   padding-top: 15px;
@@ -1256,6 +1355,8 @@ footer div.top {
       -ms-flex-align: start;
           align-items: start;
   grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: -webkit-max-content 1fr;
+  grid-template-rows: max-content 1fr;
   grid-template-areas: "Logotype Menu Form" "Contacts Menu Form";
   grid-gap: 36px 20px;
   padding-bottom: 50px;
@@ -1270,7 +1371,8 @@ footer div.top {
   footer div.top {
     grid-template-columns: 1fr;
     grid-template-areas: "Logotype" "Menu" "Contacts" "Form";
-    grid-gap: 26px;
+    padding-bottom: unset;
+    grid-gap: unset;
   }
 }
 footer div.top a.logotype {
@@ -1288,6 +1390,11 @@ footer div.top a.logotype {
   }
   footer div.top a.logotype img {
     width: 112px;
+  }
+}
+@media (max-width: 640px) {
+  footer div.top a.logotype {
+    margin-bottom: 10px;
   }
 }
 footer div.top menu {
@@ -1314,6 +1421,27 @@ footer div.top menu {
     padding-bottom: 15px;
     border-bottom: 1px solid rgba(231, 152, 168, 0.3019607843);
   }
+}
+@media (max-width: 640px) {
+  footer div.top menu {
+    margin-bottom: 20px;
+  }
+}
+footer div.top menu a {
+  font-size: 16px;
+}
+@media (min-width: 480px) {
+  footer div.top menu a {
+    font-size: calc(0.0016129032 * 100vw + 15.2258064516px);
+  }
+}
+@media (min-width: 1720px) {
+  footer div.top menu a {
+    font-size: 18px;
+  }
+}
+footer div.top menu a:hover {
+  color: #E798A8;
 }
 footer div.top form {
   grid-area: Form;
@@ -1353,6 +1481,22 @@ footer div.top form div.fields button {
     margin-top: 6px;
   }
 }
+footer div.top form div.fields label.checkbox span {
+  font-size: 12px;
+}
+@media (min-width: 480px) {
+  footer div.top form div.fields label.checkbox span {
+    font-size: calc(0.0016129032 * 100vw + 11.2258064516px);
+  }
+}
+@media (min-width: 1720px) {
+  footer div.top form div.fields label.checkbox span {
+    font-size: 14px;
+  }
+}
+footer div.top form div.fields label.checkbox span {
+  line-height: 140%;
+}
 footer div.top div.contacts {
   grid-area: Contacts;
   grid-column: 2 span;
@@ -1362,6 +1506,12 @@ footer div.top div.contacts {
 @media (max-width: 960px) {
   footer div.top div.contacts {
     grid-column: unset;
+    grid-gap: 25px;
+  }
+}
+@media (max-width: 640px) {
+  footer div.top div.contacts {
+    margin-bottom: 20px;
   }
 }
 footer div.top div.contacts div.list {
@@ -1377,6 +1527,17 @@ footer div.top div.contacts div.list a {
   grid-template-columns: max-content 1fr;
   grid-gap: 10px;
   text-decoration: underline;
+  font-size: 16px;
+}
+@media (min-width: 480px) {
+  footer div.top div.contacts div.list a {
+    font-size: calc(0.0016129032 * 100vw + 15.2258064516px);
+  }
+}
+@media (min-width: 1720px) {
+  footer div.top div.contacts div.list a {
+    font-size: 18px;
+  }
 }
 footer div.top div.contacts div.list a:hover {
   text-decoration: none;
@@ -1384,6 +1545,14 @@ footer div.top div.contacts div.list a:hover {
 footer div.top div.contacts div.socials {
   display: grid;
   grid-gap: 10px;
+}
+@media (max-width: 640px) {
+  footer div.top div.contacts div.socials {
+    grid-gap: 3px;
+  }
+}
+footer div.top div.contacts div.socials span {
+  font-weight: 600;
 }
 footer div.top div.contacts div.socials div.icons {
   display: -webkit-box;
@@ -1419,6 +1588,7 @@ footer div.bottom {
 @media (max-width: 640px) {
   footer div.bottom {
     grid-template-columns: 1fr;
+    border: unset;
   }
 }
 @media (max-width: 1280px) {
@@ -1431,6 +1601,19 @@ footer div.bottom {
     grid-column: 1 span;
   }
 }
+footer div.bottom a {
+  text-decoration: underline;
+}
+footer div.bottom a:hover {
+  text-decoration: none;
+}
+footer div.bottom a.develop {
+  display: grid;
+  grid-template-columns: repeat(2, -webkit-max-content);
+  grid-template-columns: repeat(2, max-content);
+  grid-gap: 10px;
+  text-decoration: none;
+}
 @media (max-width: 1280px) {
   footer div.bottom a.develop {
     grid-column: 3 span;
@@ -1439,6 +1622,7 @@ footer div.bottom {
 @media (max-width: 640px) {
   footer div.bottom a.develop {
     grid-column: 1 span;
+    grid-gap: 4px;
   }
 }
 footer img.leaf {

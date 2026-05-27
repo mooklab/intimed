@@ -212,8 +212,14 @@ section.product
         div.swiper-pagination
             position: absolute
             bottom: 20px
+            opacity: 0
+            pointer-events: none
+            +s(m)
+                opacity: 1
+                pointer-events: auto
 
 section.why
+    pointer-events: none
     margin-top: calc(var(--section-gap) * 2)
     margin-bottom: calc(var(--section-gap) * 3)
     +s(m)
@@ -223,9 +229,7 @@ section.why
     div.container
         display: grid
         justify-items: center
-        grid-gap: 180px
-        +s(l)
-            grid-gap: 120px
+        grid-gap: 120px
         +s(m)
             grid-gap: 60px
         +s(s)
@@ -274,25 +278,38 @@ section.why
                     grid-row: unset
                     order: -1
 
-                img.bottle
+                img.circle
                     position: absolute
-                    width: 100%
                     top: 50%
                     left: 50%
                     transform: translate(-50%, -50%)
+                    z-index: 1
+                    width: 100%
+                    max-width: 460px
+                    +s(s)
+                        width: 288px
+
+                img.bottle
+                    position: absolute
+                    width: 70%
+                    top: 50%
+                    left: 50%
+                    transform: translate(-50%, -50%)
+                    z-index: 2
                     +s(s)
                         position: static
                         transform: unset
-                        max-height: 320px
+                        height: 260px
                         max-width: 100%
                         width: auto
+                        transform: rotate(-20deg)
 
                 img.background
                     position: absolute
                     top: 50%
                     left: 50%
                     transform: translate(-50%, -50%)
-                    pointer-events: none
+                    z-index: 1
                     +s(s)
                         top: 30%
 
@@ -305,7 +322,6 @@ section.why
             top: 50px
         +s(m)
             display: none
-
     img.second
         left: 50%
         margin-left: 0px
@@ -336,3 +352,13 @@ section.products
 
     div.swiper-pagination
         margin-top: 20px
+
+    div.swiper
+        overflow: visible
+
+    div.swiper-slide
+        height: auto !important
+
+    a.product
+        align-content: start
+        height: 100%

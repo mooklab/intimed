@@ -42,6 +42,7 @@ section.where div.tabs div.tabs_captions div.tab_caption {
   border-radius: 30px;
   padding: 14px 40px;
   color: #e798a8;
+  font-weight: 600;
 }
 section.where div.tabs div.tabs_captions div.tab_caption.open {
   background: #e798a8;
@@ -118,13 +119,48 @@ section.reviews div.review div.text {
   grid-gap: 20px;
   padding-bottom: 24px;
 }
+@media (max-width: 960px) {
+  section.reviews div.review div.text {
+    grid-gap: 10px;
+    padding-bottom: 16px;
+  }
+}
 section.reviews div.review div.text h3 {
   text-transform: unset;
   color: #e798a8;
 }
 section.reviews div.review div.text span.title {
+  font-family: "Bauhaus", sans-serif;
   font-weight: 500;
+  line-height: 126%;
   color: #4a2c2f;
+  font-size: 14px;
+}
+@media (min-width: 480px) {
+  section.reviews div.review div.text span.title {
+    font-size: calc(0.0048387097 * 100vw + 11.6774193548px);
+  }
+}
+@media (min-width: 1720px) {
+  section.reviews div.review div.text span.title {
+    font-size: 20px;
+  }
+}
+section.reviews div.review div.text div.link {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: -webkit-max-content;
+  grid-auto-columns: max-content;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  grid-gap: 5px;
+}
+section.reviews div.review div.text div.link a.link {
+  text-decoration: underline;
+}
+section.reviews div.review div.text div.link a.link:hover {
+  text-decoration: none;
 }
 section.reviews div.review div.text span.text {
   color: #6d454d;
@@ -139,6 +175,11 @@ section.reviews div.review div.author {
   grid-gap: 14px;
   border-top: 1px solid rgba(231, 152, 168, 0.2);
   padding-top: 24px;
+}
+@media (max-width: 960px) {
+  section.reviews div.review div.author {
+    padding-top: 16px;
+  }
 }
 section.reviews div.review div.author img.preview {
   width: 38px;
@@ -246,6 +287,7 @@ section.faq div.tabs div.tabs_captions div.tab_caption {
   border-radius: 30px;
   padding: 14px 40px;
   color: #e798a8;
+  font-weight: 600;
 }
 @media (max-width: 640px) {
   section.faq div.tabs div.tabs_captions div.tab_caption {
@@ -357,12 +399,14 @@ section.main div.container div.text {
 @media (max-width: 960px) {
   section.main div.container div.text {
     grid-gap: 8px;
+    text-align: left;
   }
 }
 section.main div.container div.swiper {
   overflow: visible;
 }
-section.main div.container a.product {
+section.main div.container a.main_product {
+  position: relative;
   display: grid;
   grid-template-rows: -webkit-max-content 1fr;
   grid-template-rows: max-content 1fr;
@@ -376,11 +420,11 @@ section.main div.container a.product {
   transition: box-shadow 0.5s, -webkit-box-shadow 0.5s;
 }
 @media (max-width: 960px) {
-  section.main div.container a.product {
+  section.main div.container a.main_product {
     border-radius: 20px;
   }
 }
-section.main div.container a.product div.count {
+section.main div.container a.main_product div.count {
   display: grid;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -398,25 +442,59 @@ section.main div.container a.product div.count {
   font-size: 12px;
 }
 @media (min-width: 480px) {
-  section.main div.container a.product div.count {
+  section.main div.container a.main_product div.count {
     font-size: calc(0.0048387097 * 100vw + 9.6774193548px);
   }
 }
 @media (min-width: 1720px) {
-  section.main div.container a.product div.count {
+  section.main div.container a.main_product div.count {
     font-size: 18px;
   }
 }
 @media (max-width: 960px) {
-  section.main div.container a.product div.count {
+  section.main div.container a.main_product div.count {
     top: 15px;
     left: 15px;
   }
 }
-section.main div.container a.product img.preview {
-  width: 100%;
+section.main div.container a.main_product div.preview {
+  position: relative;
 }
-section.main div.container a.product div.description {
+section.main div.container a.main_product div.preview img.preview {
+  position: relative;
+  width: 100%;
+  z-index: 2;
+}
+section.main div.container a.main_product div.preview img.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0.2;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+section.main div.container a.main_product div.preview::after {
+  content: "";
+  position: absolute;
+  top: 20%;
+  left: 5%;
+  width: 90%;
+  height: 60%;
+  border-radius: 50%;
+  background: #FFDBE6;
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+  -webkit-filter: blur(50px);
+          filter: blur(50px);
+  opacity: 0;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+section.main div.container a.main_product div.description {
   display: grid;
   grid-template-rows: -webkit-max-content 1fr;
   grid-template-rows: max-content 1fr;
@@ -424,75 +502,86 @@ section.main div.container a.product div.description {
   grid-auto-rows: -webkit-max-content;
   grid-auto-rows: max-content;
   padding: 30px;
+  padding-top: unset;
 }
 @media (max-width: 960px) {
-  section.main div.container a.product div.description {
+  section.main div.container a.main_product div.description {
     padding: 15px;
   }
 }
-section.main div.container a.product div.description div.title {
+section.main div.container a.main_product div.description div.title {
   display: grid;
   grid-gap: 12px;
 }
 @media (max-width: 960px) {
-  section.main div.container a.product div.description div.title {
+  section.main div.container a.main_product div.description div.title {
     grid-gap: 5px;
   }
 }
-section.main div.container a.product div.description div.title span {
+section.main div.container a.main_product div.description div.title span {
   text-transform: uppercase;
+  line-height: 150%;
   font-size: 12px;
 }
 @media (min-width: 480px) {
-  section.main div.container a.product div.description div.title span {
+  section.main div.container a.main_product div.description div.title span {
     font-size: calc(0.0032258065 * 100vw + 10.4516129032px);
   }
 }
 @media (min-width: 1720px) {
-  section.main div.container a.product div.description div.title span {
+  section.main div.container a.main_product div.description div.title span {
     font-size: 16px;
   }
 }
-section.main div.container a.product div.description ul {
+section.main div.container a.main_product div.description ul {
   margin-top: 16px;
   margin-bottom: 20px;
 }
 @media (max-width: 960px) {
-  section.main div.container a.product div.description ul {
+  section.main div.container a.main_product div.description ul {
     margin-top: 8px;
     margin-bottom: 15px;
   }
 }
-section.main div.container a.product div.description ul li {
+section.main div.container a.main_product div.description ul li {
   line-height: 180%;
   font-size: 12px;
 }
 @media (min-width: 480px) {
-  section.main div.container a.product div.description ul li {
+  section.main div.container a.main_product div.description ul li {
     font-size: calc(0.0032258065 * 100vw + 10.4516129032px);
   }
 }
 @media (min-width: 1720px) {
-  section.main div.container a.product div.description ul li {
+  section.main div.container a.main_product div.description ul li {
     font-size: 16px;
   }
 }
-section.main div.container a.product div.description hr {
+section.main div.container a.main_product div.description hr {
   width: 100%;
   height: 1px;
   background: rgba(231, 152, 168, 0.2);
 }
-section.main div.container a.product div.description span.link {
+section.main div.container a.main_product div.description span.link {
   margin-top: 20px;
 }
 @media (max-width: 960px) {
-  section.main div.container a.product div.description span.link {
+  section.main div.container a.main_product div.description span.link {
     margin-top: 15px;
   }
 }
-section.main div.container a.product:hover {
+section.main div.container a.main_product:hover {
   -webkit-box-shadow: 2px 6px 14px 0 rgba(255, 224, 231, 0.1019607843), 6px 24px 25px 0 rgba(255, 224, 231, 0.0901960784), 14px 55px 34px 0 rgba(231, 152, 168, 0.0509803922), 24px 97px 40px 0 rgba(255, 224, 231, 0.0117647059), 38px 152px 44px 0 rgba(255, 224, 231, 0);
           box-shadow: 2px 6px 14px 0 rgba(255, 224, 231, 0.1019607843), 6px 24px 25px 0 rgba(255, 224, 231, 0.0901960784), 14px 55px 34px 0 rgba(231, 152, 168, 0.0509803922), 24px 97px 40px 0 rgba(255, 224, 231, 0.0117647059), 38px 152px 44px 0 rgba(255, 224, 231, 0);
+}
+section.main div.container a.main_product:hover div.preview img.background {
+  opacity: 0.8;
+}
+section.main div.container a.main_product:hover div.preview::after {
+  opacity: 0.3;
+  -webkit-transform: rotate(-15deg);
+      -ms-transform: rotate(-15deg);
+          transform: rotate(-15deg);
 }
 section.main img.first {
   right: 50%;
@@ -564,6 +653,11 @@ section.banners div.arrow {
 section.banners div.arrow svg path {
   fill: white;
 }
+section.banners div.swiper-navigation {
+  opacity: 0;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
 @media (max-width: 640px) {
   section.banners div.swiper-navigation {
     display: none;
@@ -577,6 +671,9 @@ section.banners div.swiper-pagination {
   section.banners div.swiper-pagination {
     display: grid;
   }
+}
+section.banners:hover div.swiper-navigation {
+  opacity: 1;
 }
 
 section.about {
@@ -626,6 +723,8 @@ section.about div.container div.text {
 @media (max-width: 960px) {
   section.about div.container div.text {
     padding: 20px;
+    grid-gap: unset;
+    z-index: 11;
   }
 }
 section.about div.container div.text img.intimed {
@@ -641,13 +740,29 @@ section.about div.container div.text img.intimed {
   section.about div.container div.text img.intimed {
     position: static;
     width: 100%;
-    margin-bottom: 16px;
+    margin-bottom: 36px;
   }
 }
 section.about div.container div.text span.big {
   font-weight: 500;
-  font-size: 20px;
   max-width: 480px;
+  font-size: 16px;
+}
+@media (min-width: 480px) {
+  section.about div.container div.text span.big {
+    font-size: calc(0.0032258065 * 100vw + 14.4516129032px);
+  }
+}
+@media (min-width: 1720px) {
+  section.about div.container div.text span.big {
+    font-size: 20px;
+  }
+}
+@media (max-width: 640px) {
+  section.about div.container div.text span.big {
+    margin-top: 8px;
+    margin-bottom: 20px;
+  }
 }
 section.about img.leaf {
   left: 50%;
@@ -666,6 +781,7 @@ section.about img.leaf {
 }
 
 section.why {
+  pointer-events: none;
   margin-top: calc(var(--section-gap) * 2);
   margin-bottom: calc(var(--section-gap) * 3);
 }
@@ -678,12 +794,7 @@ section.why {
 section.why div.container {
   display: grid;
   justify-items: center;
-  grid-gap: 180px;
-}
-@media (max-width: 1280px) {
-  section.why div.container {
-    grid-gap: 120px;
-  }
+  grid-gap: 120px;
 }
 @media (max-width: 960px) {
   section.why div.container {
@@ -763,14 +874,31 @@ section.why div.container div.grid div.bottle {
             order: -1;
   }
 }
-section.why div.container div.grid div.bottle img.bottle {
+section.why div.container div.grid div.bottle img.circle {
   position: absolute;
-  width: 100%;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+  z-index: 1;
+  width: 100%;
+  max-width: 460px;
+}
+@media (max-width: 640px) {
+  section.why div.container div.grid div.bottle img.circle {
+    width: 288px;
+  }
+}
+section.why div.container div.grid div.bottle img.bottle {
+  position: absolute;
+  width: 70%;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 2;
 }
 @media (max-width: 640px) {
   section.why div.container div.grid div.bottle img.bottle {
@@ -778,9 +906,12 @@ section.why div.container div.grid div.bottle img.bottle {
     -webkit-transform: unset;
         -ms-transform: unset;
             transform: unset;
-    max-height: 320px;
+    height: 260px;
     max-width: 100%;
     width: auto;
+    -webkit-transform: rotate(-20deg);
+        -ms-transform: rotate(-20deg);
+            transform: rotate(-20deg);
   }
 }
 section.why div.container div.grid div.bottle img.background {
@@ -790,6 +921,7 @@ section.why div.container div.grid div.bottle img.background {
   -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+  z-index: 1;
 }
 @media (max-width: 640px) {
   section.why div.container div.grid div.bottle img.background {

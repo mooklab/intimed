@@ -19,6 +19,10 @@ section.error div.preview {
     margin-bottom: 32px;
   }
 }
+section.error div.preview img {
+  position: relative;
+  z-index: 2;
+}
 section.error div.preview img.bg {
   position: absolute;
   top: 50%;
@@ -26,6 +30,7 @@ section.error div.preview img.bg {
   -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+  z-index: 1;
 }
 section.error div.text {
   display: grid;

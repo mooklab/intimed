@@ -42,6 +42,7 @@ section.where div.tabs div.tabs_captions div.tab_caption {
   border-radius: 30px;
   padding: 14px 40px;
   color: #e798a8;
+  font-weight: 600;
 }
 section.where div.tabs div.tabs_captions div.tab_caption.open {
   background: #e798a8;
@@ -118,13 +119,48 @@ section.reviews div.review div.text {
   grid-gap: 20px;
   padding-bottom: 24px;
 }
+@media (max-width: 960px) {
+  section.reviews div.review div.text {
+    grid-gap: 10px;
+    padding-bottom: 16px;
+  }
+}
 section.reviews div.review div.text h3 {
   text-transform: unset;
   color: #e798a8;
 }
 section.reviews div.review div.text span.title {
+  font-family: "Bauhaus", sans-serif;
   font-weight: 500;
+  line-height: 126%;
   color: #4a2c2f;
+  font-size: 14px;
+}
+@media (min-width: 480px) {
+  section.reviews div.review div.text span.title {
+    font-size: calc(0.0048387097 * 100vw + 11.6774193548px);
+  }
+}
+@media (min-width: 1720px) {
+  section.reviews div.review div.text span.title {
+    font-size: 20px;
+  }
+}
+section.reviews div.review div.text div.link {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: -webkit-max-content;
+  grid-auto-columns: max-content;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  grid-gap: 5px;
+}
+section.reviews div.review div.text div.link a.link {
+  text-decoration: underline;
+}
+section.reviews div.review div.text div.link a.link:hover {
+  text-decoration: none;
 }
 section.reviews div.review div.text span.text {
   color: #6d454d;
@@ -139,6 +175,11 @@ section.reviews div.review div.author {
   grid-gap: 14px;
   border-top: 1px solid rgba(231, 152, 168, 0.2);
   padding-top: 24px;
+}
+@media (max-width: 960px) {
+  section.reviews div.review div.author {
+    padding-top: 16px;
+  }
 }
 section.reviews div.review div.author img.preview {
   width: 38px;
@@ -246,6 +287,7 @@ section.faq div.tabs div.tabs_captions div.tab_caption {
   border-radius: 30px;
   padding: 14px 40px;
   color: #e798a8;
+  font-weight: 600;
 }
 @media (max-width: 640px) {
   section.faq div.tabs div.tabs_captions div.tab_caption {
@@ -347,6 +389,15 @@ section.catalog div.title {
   text-align: center;
   margin-top: 20px;
 }
+@media (max-width: 960px) {
+  section.catalog div.title {
+    text-align: left;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+    grid-gap: 8px;
+  }
+}
 section.catalog div.subtitle {
   display: grid;
   -webkit-box-align: center;
@@ -361,6 +412,14 @@ section.catalog div.subtitle {
   padding-bottom: 60px;
   margin-bottom: 30px;
 }
+@media (max-width: 960px) {
+  section.catalog div.subtitle {
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+    padding-top: 40px;
+    padding-bottom: 15px;
+  }
+}
 section.catalog div.subtitle img.font {
   position: absolute;
   top: 50%;
@@ -368,12 +427,24 @@ section.catalog div.subtitle img.font {
   -webkit-transform: translateY(-50%);
       -ms-transform: translateY(-50%);
           transform: translateY(-50%);
+  z-index: -1;
+}
+@media (max-width: 960px) {
+  section.catalog div.subtitle img.font {
+    height: 55px;
+  }
 }
 section.catalog div.subtitle div.description {
   position: relative;
   display: grid;
   grid-gap: 10px;
   z-index: 1;
+  padding-left: 40px;
+}
+@media (max-width: 960px) {
+  section.catalog div.subtitle div.description {
+    padding-left: 20px;
+  }
 }
 section.catalog div.subtitle div.tags {
   display: -webkit-box;
@@ -385,11 +456,21 @@ section.catalog div.subtitle div.tags {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   gap: 10px;
+  z-index: 1;
+}
+@media (max-width: 960px) {
+  section.catalog div.subtitle div.tags {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+    border-top: 1px solid rgba(231, 152, 168, 0.3019607843);
+    padding-top: 15px;
+  }
 }
 section.catalog div.subtitle div.tags span {
   background: rgba(231, 152, 168, 0.1490196078);
   border-radius: 40px;
-  padding: 4px 16px;
+  padding: 4px 16px 4px;
   height: 30px;
   font-weight: 600;
   line-height: 140%;
@@ -406,6 +487,11 @@ section.catalog div.subtitle div.tags span {
 @media (min-width: 1720px) {
   section.catalog div.subtitle div.tags span {
     font-size: 16px;
+  }
+}
+@media (max-width: 640px) {
+  section.catalog div.subtitle div.tags span {
+    padding: 5px 10px 3px;
   }
 }
 section.catalog div.list {
@@ -438,4 +524,12 @@ section.catalog img.banner.twocell {
 section.catalog img.banner.onecell {
   -o-object-position: right bottom;
      object-position: right bottom;
+}
+section.catalog img.banner.onlymobile {
+  display: none;
+}
+@media (max-width: 640px) {
+  section.catalog img.banner.onlymobile {
+    display: block;
+  }
 }/*# sourceMappingURL=catalog.css.map */

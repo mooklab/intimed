@@ -15,6 +15,10 @@ section.catalog
         justify-content: center
         text-align: center
         margin-top: 20px
+        +s(m)
+            text-align: left
+            justify-content: start
+            grid-gap: 8px
 
     div.subtitle
         display: grid
@@ -26,25 +30,45 @@ section.catalog
         padding-top: 80px
         padding-bottom: 60px
         margin-bottom: 30px
+        +s(m)
+            grid-template-columns: 1fr
+            grid-gap: 20px
+            padding-top: 40px
+            padding-bottom: 15px
+
         img.font
             position: absolute
             top: 50%
             left: 0
             transform: translateY(-50%)
+            z-index: -1
+            +s(m)
+                height: 55px
+
         div.description
             position: relative
             display: grid
             grid-gap: 10px
             z-index: 1
+            padding-left: 40px
+            +s(m)
+                padding-left: 20px
+
         div.tags
             display: flex
             justify-content: end
             flex-wrap: wrap
             gap: 10px
+            z-index: 1
+            +s(m)
+                justify-content: start
+                border-top: 1px solid #e798a84d
+                padding-top: 15px
+
             span
                 background: #e798a826
                 border-radius: 40px
-                padding: 4px 16px
+                padding: 4px 16px 4px
                 height: 30px
                 font-weight: 600
                 line-height: 140%
@@ -52,6 +76,8 @@ section.catalog
                 text-align: center
                 color: #e798a8
                 +f(12px, 16px)
+                +s(s)
+                    padding: 5px 10px 3px
 
     div.list
         display: grid
@@ -74,3 +100,8 @@ section.catalog
 
         &.onecell
             object-position: right bottom
+
+        &.onlymobile
+            display: none
+            +s(s)
+                display: block

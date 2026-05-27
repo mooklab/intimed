@@ -50,6 +50,7 @@ section.faq div.tabs div.tabs_captions div.tab_caption {
   border-radius: 30px;
   padding: 14px 40px;
   color: #e798a8;
+  font-weight: 600;
 }
 @media (max-width: 640px) {
   section.faq div.tabs div.tabs_captions div.tab_caption {

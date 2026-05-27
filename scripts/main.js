@@ -28,6 +28,11 @@ new Swiper(indexMainSwiper, {
         960: {
             slidesPerView: 3
         }
+    },
+    on: {
+        init: function () {
+            this.el.classList.add('show')
+        }
     }
 })
 
@@ -45,6 +50,11 @@ new Swiper(reviewSwiper, {
         960: {
             slidesPerView: 'auto'
         }
+    },
+    on: {
+        init: function () {
+            this.el.classList.add('show')
+        }
     }
 })
 
@@ -58,6 +68,11 @@ new Swiper(productSwiper, {
     breakpoints: {
         640: {
             slidesPerView: 3
+        }
+    },
+    on: {
+        init: function () {
+            this.el.classList.add('show')
         }
     }
 })
@@ -75,12 +90,22 @@ new Swiper(productPreviewSwiper, {
     },
     thumbs: {
         swiper: productThumbSwiper
+    },
+    on: {
+        init: function () {
+            this.el.classList.add('show')
+        }
     }
 })
 
 new Swiper(productThumbSwiper, {
     slidesPerView: 4,
-    spaceBetween: 10
+    spaceBetween: 10,
+    on: {
+        init: function () {
+            this.el.classList.add('show')
+        }
+    }
 })
 
 new Swiper(bannerSwiper, {
@@ -93,6 +118,11 @@ new Swiper(bannerSwiper, {
     pagination: {
         el: bannerSwiper?.closest('section').querySelector('div.swiper-pagination'),
         clickable: true,
+    },
+    on: {
+        init: function () {
+            this.el.classList.add('show')
+        }
     }
 })
 
@@ -116,6 +146,11 @@ commonWhereSwipers.forEach(swiper => {
             1280: {
                 slidesPerView: 5,
                 spaceBetween: 20,
+            }
+        },
+        on: {
+            init: function () {
+                this.el.classList.add('show')
             }
         }
     })
@@ -152,15 +187,58 @@ productAccordions.forEach(accordion => {
 })
 
 
-// gsap.to(".leaf", {
-//     y: -80,
-//     x: 20,
-//     scale: 1.08,
-//     ease: "none",
-//     scrollTrigger: {
-//         trigger: ".leaf",
-//         start: "top bottom",
-//         end: "bottom top",
-//         scrub: 1
-//     }
-// })
+
+
+
+function createTriggers() {
+    const circle = document.querySelector('section.why img.circle')
+    const bottle = document.querySelector('section.why img.bottle')
+    const description = document.querySelector('section.why div.description')
+    const advantages = document.querySelectorAll('section.why div.advantage')
+    const leaf_first = document.querySelector('section.why img.leaf.first')
+    const leaf_second = document.querySelector('section.why img.leaf.second')
+
+    let timeline = gsap.timeline({
+        scrollTrigger: {
+            trigger: "section.why",
+            start: "center 50%",
+            end: "+=3000",
+            toggleActions: 'play none none reverse',
+            scrub: true,
+            pin: true,
+            // markers: true
+        }
+    });
+
+    gsap.set(description, { opacity: 0 })
+    gsap.set(circle, { scale: 0 })
+    gsap.set(bottle, { scale: 0.7 })
+    gsap.set(leaf_first, { opacity: 0, x: -300 })
+    gsap.set(leaf_second, { opacity: 0, x: 300 })
+
+    timeline.to(description, { opacity: 1 })
+        .to(bottle, { rotation: '+=20', scale: 1 })
+        .to(circle, { scale: 1 }, '<')
+        .to(leaf_first, { opacity: 1, x: 0 }, '<')
+        .to(leaf_second, { opacity: 1, x: 0 }, '<')
+
+    advantages.forEach(advantage => {
+        gsap.set(advantage, { opacity: 0 })
+        timeline.to(advantage, { opacity: 1 })
+    })
+}
+
+function init() {
+    ScrollTrigger.getAll().forEach(t => t.kill())
+    createTriggers()
+    requestAnimationFrame(() => {
+        ScrollTrigger.refresh()
+    })
+}
+
+window.addEventListener("load", () => {
+    if (window.innerWidth >= 640) document.fonts?.ready?.then(init) ?? init()
+})
+window.addEventListener("resize", () => {
+    if (window.innerWidth >= 640) document.fonts?.ready?.then(init) ?? init()
+})

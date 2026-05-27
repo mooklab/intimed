@@ -140,6 +140,8 @@ label.checkbox
         height: 14px
         border: 1px solid #FFDBE6
         box-sizing: border-box
+        +s(s)
+            top: 0.4em
 
     span::after
         content: ''
@@ -150,10 +152,17 @@ label.checkbox
         width: 14px
         height: 14px
         background-image: url(../images/checkbox_tick.svg)
+        +s(s)
+            top: 0.4em
 
 div.swiper
+    opacity: 0
     width: 100%
     min-width: 0
+    transition: opacity 0.1s
+    user-select: none
+    &.show
+        opacity: 1
 
 div.swiper-pagination
     display: grid
@@ -162,6 +171,9 @@ div.swiper-pagination
     justify-content: center
     grid-gap: 4px
     position: static
+
+    &.swiper-pagination-lock
+        display: none
 
     span
         display: block
@@ -219,9 +231,11 @@ a.product
     padding: 40px
     border-radius: 30px
     background: white
+    transition: all 0.3s
     +s(m)
         background: unset
         padding: unset
+
     div.preview
         display: grid
         grid-gap: 40px
@@ -248,8 +262,10 @@ a.product
             max-width: 100%
             padding: 15px
             padding-top: 60px
+            margin: 0 auto
             +s(m)
                 padding-top: 40px
+
     div.description
         span.type
             display: block
@@ -260,11 +276,18 @@ a.product
                 margin-bottom: 5px
         h4
             margin-bottom: 10px
+            +f(14px, 24px)
             +s(s)
                 margin-bottom: 8px
 
         span.weight
             color: #6d454d
+            +f(12px, 18px)
+
+    &:hover
+        box-shadow: 2px 6px 14px 0 #ffe0e71a, 6px 24px 25px 0 #ffe0e717, 14px 55px 34px 0 #e798a80d, 24px 97px 40px 0 #ffe0e703, 38px 152px 44px 0 #ffe0e700
+        +s(m)
+            box-shadow: unset
 
 img.leaf
     position: absolute

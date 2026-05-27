@@ -8,6 +8,7 @@ footer
         display: grid
         align-items: start
         grid-template-columns: repeat(12, 1fr)
+        grid-template-rows: max-content 1fr
         grid-template-areas: 'Logotype Menu Form' 'Contacts Menu Form'
         grid-gap: 36px 20px
         padding-bottom: 50px
@@ -17,7 +18,8 @@ footer
         +s(s)
             grid-template-columns: 1fr
             grid-template-areas: 'Logotype' 'Menu' 'Contacts' 'Form'
-            grid-gap: 26px
+            padding-bottom: unset
+            grid-gap: unset
 
         a.logotype
             grid-area: Logotype
@@ -28,6 +30,8 @@ footer
                 grid-column: unset
                 img
                     width: 112px
+            +s(s)
+                margin-bottom: 10px
 
         menu
             grid-area: Menu
@@ -46,6 +50,13 @@ footer
                     padding-top: 15px
                     padding-bottom: 15px
                     border-bottom: 1px solid #e798a84d
+            +s(s)
+                margin-bottom: 20px
+
+            a
+                +f(16px, 18px)
+                &:hover
+                    color: #E798A8
 
         form
             grid-area: Form
@@ -76,6 +87,11 @@ footer
                     +s(m)
                         margin-top: 6px
 
+                label.checkbox
+                    span
+                        +f(12px, 14px)
+                        line-height: 140%
+
         div.contacts
             grid-area: Contacts
             grid-column: 2 span
@@ -83,6 +99,9 @@ footer
             grid-gap: 30px
             +s(m)
                 grid-column: unset
+                grid-gap: 25px
+            +s(s)
+                margin-bottom: 20px
 
             div.list
                 display: grid
@@ -93,12 +112,17 @@ footer
                     grid-template-columns: max-content 1fr
                     grid-gap: 10px
                     text-decoration: underline
+                    +f(16px, 18px)
                     &:hover
                         text-decoration: none
 
             div.socials
                 display: grid
                 grid-gap: 10px
+                +s(s)
+                    grid-gap: 3px
+                span
+                    font-weight: 600
                 div.icons
                     display: flex
                     grid-gap: 10px
@@ -122,6 +146,7 @@ footer
             grid-gap: 10px
         +s(s)
             grid-template-columns: 1fr
+            border: unset
 
         span.copyright
             +s(l)
@@ -129,11 +154,21 @@ footer
             +s(s)
                 grid-column: 1 span
 
+        a
+            text-decoration: underline
+            &:hover
+                text-decoration: none
+
         a.develop
+            display: grid
+            grid-template-columns: repeat(2, max-content)
+            grid-gap: 10px
+            text-decoration: none
             +s(l)
                 grid-column: 3 span
             +s(s)
                 grid-column: 1 span
+                grid-gap: 4px
 
     img.leaf
         left: 50%

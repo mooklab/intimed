@@ -22,11 +22,13 @@ section.main
             text-align: center
             +s(m)
                 grid-gap: 8px
+                text-align: left
 
         div.swiper
             overflow: visible
 
-        a.product
+        a.main_product
+            position: relative
             display: grid
             grid-template-rows: max-content 1fr
             height: 100%
@@ -55,8 +57,37 @@ section.main
                     top: 15px
                     left: 15px
 
-            img.preview
-                width: 100%
+            div.preview
+                position: relative
+
+                img.preview
+                    position: relative
+                    width: 100%
+                    z-index: 2
+
+                img.background
+                    position: absolute
+                    top: 0
+                    left: 0
+                    width: 100%
+                    height: 100%
+                    z-index: 1
+                    opacity: 0.2
+                    transition: all 0.5s
+
+                &::after
+                    content: ''
+                    position: absolute
+                    top: 20%
+                    left: 5%
+                    width: 90%
+                    height: 60%
+                    border-radius: 50%
+                    background: #FFDBE6
+                    transform: rotate(180deg)
+                    filter: blur(50px)
+                    opacity: 0
+                    transition: all 1s
 
             div.description
                 display: grid
@@ -64,6 +95,7 @@ section.main
                 grid-auto-flow: row
                 grid-auto-rows: max-content
                 padding: 30px
+                padding-top: unset
                 +s(m)
                     padding: 15px
 
@@ -75,6 +107,7 @@ section.main
 
                     span
                         text-transform: uppercase
+                        line-height: 150%
                         +f(12px, 16px)
 
                 ul
@@ -99,6 +132,13 @@ section.main
 
             &:hover
                 box-shadow: 2px 6px 14px 0 #ffe0e71a, 6px 24px 25px 0 #ffe0e717, 14px 55px 34px 0 #e798a80d, 24px 97px 40px 0 #ffe0e703, 38px 152px 44px 0 #ffe0e700
+
+                div.preview
+                    img.background
+                        opacity: 0.8
+                    &::after
+                        opacity: 0.3
+                        transform: rotate(-15deg)
 
     img.first
         right: 50%
@@ -146,13 +186,20 @@ section.banners
             path
                 fill: white
     div.swiper-navigation
+        opacity: 0
+        transition: all 0.3s
         +s(s)
             display: none
+
     div.swiper-pagination
         margin-top: 20px
         display: none
         +s(s)
             display: grid
+
+    &:hover
+        div.swiper-navigation
+            opacity: 1
 
 section.about
     margin-top: var(--section-gap)
@@ -190,6 +237,8 @@ section.about
             padding: 50px
             +s(m)
                 padding: 20px
+                grid-gap: unset
+                z-index: 11
 
             img.intimed
                 position: absolute
@@ -201,12 +250,15 @@ section.about
                 +s(m)
                     position: static
                     width: 100%
-                    margin-bottom: 16px
+                    margin-bottom: 36px
 
             span.big
                 font-weight: 500
-                font-size: 20px
                 max-width: 480px
+                +f(16px, 20px)
+                +s(s)
+                    margin-top: 8px
+                    margin-bottom: 20px
 
     img.leaf
         left: 50%
@@ -219,6 +271,7 @@ section.about
             bottom: -250px
 
 section.why
+    pointer-events: none
     margin-top: calc(var(--section-gap) * 2)
     margin-bottom: calc(var(--section-gap) * 3)
     +s(m)
@@ -228,9 +281,7 @@ section.why
     div.container
         display: grid
         justify-items: center
-        grid-gap: 180px
-        +s(l)
-            grid-gap: 120px
+        grid-gap: 120px
         +s(m)
             grid-gap: 60px
         +s(s)
@@ -279,24 +330,38 @@ section.why
                     grid-row: unset
                     order: -1
 
-                img.bottle
+                img.circle
                     position: absolute
-                    width: 100%
                     top: 50%
                     left: 50%
                     transform: translate(-50%, -50%)
+                    z-index: 1
+                    width: 100%
+                    max-width: 460px
+                    +s(s)
+                        width: 288px
+
+                img.bottle
+                    position: absolute
+                    width: 70%
+                    top: 50%
+                    left: 50%
+                    transform: translate(-50%, -50%)
+                    z-index: 2
                     +s(s)
                         position: static
                         transform: unset
-                        max-height: 320px
+                        height: 260px
                         max-width: 100%
                         width: auto
+                        transform: rotate(-20deg)
 
                 img.background
                     position: absolute
                     top: 50%
                     left: 50%
                     transform: translate(-50%, -50%)
+                    z-index: 1
                     +s(s)
                         top: 30%
 
