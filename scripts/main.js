@@ -204,7 +204,7 @@ function createTriggers() {
             start: "center 50%",
             end: "+=3000",
             toggleActions: 'play none none reverse',
-            scrub: true,
+            scrub: 2,
             pin: true,
             // markers: true
         }
