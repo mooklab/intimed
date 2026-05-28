@@ -202,7 +202,7 @@ function createTriggers() {
         scrollTrigger: {
             trigger: "section.why",
             start: "center 50%",
-            end: "+=3000",
+            end: "+=1500",
             toggleActions: 'play none none reverse',
             scrub: 3,
             pin: true,
