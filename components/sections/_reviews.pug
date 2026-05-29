@@ -2,9 +2,10 @@ mixin review(name)
     div.review
         div.text
             span.title Это единственное средство, после которого кожа не раздражается
-            span.text Это единственное средство, после которого кожа не раздражается и чувствует себя отлично весь день...
-            div.link
-                a.link Читать весь комментарий
+            span.text Это единственное средство, после которого кожа не раздражается и чувствует себя отлично весь день. Это единственное средство, после которого кожа не раздражается и чувствует себя отлично весь день
+            div(onclick="this.closest('div.text').classList.toggle('show')").link
+                span.link.show Читать весь комментарий
+                span.link.hide Свернуть комментарий
                 img(src="images/heart.svg")
         div.author
             img(src="images/7.webp", alt="Мария Петрова").preview
@@ -21,7 +22,13 @@ mixin review(name)
 section.reviews
     div.container
 
-        h2 Женщины доверяют #[br]Intimed каждый день
+        div.title
+            h2 Женщины доверяют #[br]Intimed каждый день
+            div.swiper-navigation
+                div.arrow
+                    include ../../images/swiper_arrow.svg
+                div.arrow
+                    include ../../images/swiper_arrow.svg
 
         div.swiper
             div.swiper-wrapper

@@ -100,6 +100,34 @@ section.reviews div.container {
     grid-gap: 20px;
   }
 }
+section.reviews div.container:hover div.title div.swiper-navigation {
+  opacity: 1;
+}
+section.reviews div.title {
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  grid-template-columns: 1fr -webkit-max-content;
+  grid-template-columns: 1fr max-content;
+}
+section.reviews div.title div.swiper-navigation {
+  -webkit-transform: unset;
+      -ms-transform: unset;
+          transform: unset;
+  position: static;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  grid-template-columns: repeat(2, -webkit-max-content);
+  grid-template-columns: repeat(2, max-content);
+  grid-gap: 16px;
+  height: 100%;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
 section.reviews div.swiper div.swiper-slide {
   width: auto;
 }
@@ -156,14 +184,34 @@ section.reviews div.review div.text div.link {
           align-items: center;
   grid-gap: 5px;
 }
-section.reviews div.review div.text div.link a.link {
+section.reviews div.review div.text div.link span.link {
+  cursor: pointer;
   text-decoration: underline;
 }
-section.reviews div.review div.text div.link a.link:hover {
+section.reviews div.review div.text div.link span.link:hover {
   text-decoration: none;
+}
+section.reviews div.review div.text div.link span.link.show {
+  display: grid;
+}
+section.reviews div.review div.text div.link span.link.hide {
+  display: none;
 }
 section.reviews div.review div.text span.text {
   color: #6d454d;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+section.reviews div.review div.text.show div.link span.link.show {
+  display: none;
+}
+section.reviews div.review div.text.show div.link span.link.hide {
+  display: grid;
+}
+section.reviews div.review div.text.show span.text {
+  -webkit-line-clamp: unset;
 }
 section.reviews div.review div.author {
   display: grid;

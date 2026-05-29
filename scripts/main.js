@@ -39,6 +39,10 @@ new Swiper(indexMainSwiper, {
 new Swiper(reviewSwiper, {
     slidesPerView: 1,
     spaceBetween: 20,
+    navigation: {
+        nextEl: reviewSwiper?.closest('section').querySelector('div.swiper-navigation div.arrow:last-child'),
+        prevEl: reviewSwiper?.closest('section').querySelector('div.swiper-navigation div.arrow:first-child')
+    },
     pagination: {
         el: reviewSwiper?.closest('section').querySelector('div.swiper-pagination'),
         clickable: true,

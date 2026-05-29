@@ -11,6 +11,26 @@ section.reviews
         +s(m)
             grid-gap: 20px
 
+        &:hover
+            div.title
+                div.swiper-navigation
+                    opacity: 1
+
+    div.title
+        display: grid
+        align-items: center
+        grid-template-columns: 1fr max-content
+        div.swiper-navigation
+            transform: unset
+            position: static
+            display: grid
+            align-items: center
+            grid-template-columns: repeat(2, max-content)
+            grid-gap: 16px
+            height: 100%
+            opacity: 0
+            transition: opacity 0.3s
+
     div.swiper
         div.swiper-slide
             width: auto
@@ -49,13 +69,34 @@ section.reviews
                 align-items: center
                 grid-gap: 5px
 
-                a.link
+                span.link
+                    cursor: pointer
                     text-decoration: underline
                     &:hover
                         text-decoration: none
 
+                    &.show
+                        display: grid
+
+                    &.hide
+                        display: none
+
             span.text
                 color: #6d454d
+                display: -webkit-box
+                -webkit-line-clamp: 3
+                -webkit-box-orient: vertical
+                overflow: hidden
+
+            &.show 
+                div.link
+                    span.link.show
+                        display: none
+                    span.link.hide
+                        display: grid
+
+                span.text
+                    -webkit-line-clamp: unset
 
         div.author
             display: grid
