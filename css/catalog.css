@@ -156,6 +156,7 @@ section.reviews div.review div.text {
 section.reviews div.review div.text h3 {
   text-transform: unset;
   color: #e798a8;
+  margin-bottom: 66px;
 }
 section.reviews div.review div.text span.title {
   font-family: "Bauhaus", sans-serif;
@@ -264,7 +265,6 @@ section.reviews div.review div.author div.stars {
 }
 section.reviews div.review.big {
   width: 720px;
-  height: 100%;
   display: grid;
   grid-template-rows: 1fr -webkit-max-content;
   grid-template-rows: 1fr max-content;
