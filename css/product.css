@@ -158,6 +158,16 @@ section.reviews div.review div.text h3 {
   color: #e798a8;
   margin-bottom: 66px;
 }
+@media (max-width: 960px) {
+  section.reviews div.review div.text h3 {
+    margin-bottom: 84px;
+  }
+}
+@media (max-width: 640px) {
+  section.reviews div.review div.text h3 {
+    margin-bottom: 40px;
+  }
+}
 section.reviews div.review div.text span.title {
   font-family: "Bauhaus", sans-serif;
   font-weight: 500;
