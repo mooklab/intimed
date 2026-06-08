@@ -13,11 +13,16 @@ mixin review(name)
                 span.name Мария Петрова
                 span.detaiil Постоянная покупательница, чувствительная кожа
                 div.stars
-                    img(src="images/review_star.svg")
-                    img(src="images/review_star.svg")
-                    img(src="images/review_star.svg")
-                    img(src="images/review_star.svg")
-                    img(src="images/review_star.svg")
+                    div.star
+                        include ../../images/star.svg
+                    div.star
+                        include ../../images/star.svg
+                    div.star
+                        include ../../images/star.svg
+                    div.star.half
+                        include ../../images/star.svg
+                    div.star.empty
+                        include ../../images/star.svg
 
 section.reviews
     div.container
@@ -42,11 +47,16 @@ section.reviews
                                 span.name Мария Петрова
                                 span.detaiil Постоянная покупательница, чувствительная кожа
                                 div.stars
-                                    img(src="images/review_star.svg")
-                                    img(src="images/review_star.svg")
-                                    img(src="images/review_star.svg")
-                                    img(src="images/review_star.svg")
-                                    img(src="images/review_star.svg")
+                                    div.star
+                                        include ../../images/star.svg
+                                    div.star
+                                        include ../../images/star.svg
+                                    div.star
+                                        include ../../images/star.svg
+                                    div.star.half
+                                        include ../../images/star.svg
+                                    div.star.empty
+                                        include ../../images/star.svg
                 div.swiper-slide
                     +review('Мария Петрова')
                 div.swiper-slide

@@ -273,6 +273,34 @@ section.reviews div.review div.author div.stars {
   grid-gap: 3px;
   margin-top: 4px;
 }
+section.reviews div.review div.author div.stars div.star {
+  position: relative;
+  display: grid;
+  width: 16px;
+  height: 16px;
+}
+section.reviews div.review div.author div.stars div.star svg path {
+  fill: transparent;
+  stroke: #e798a8;
+}
+section.reviews div.review div.author div.stars div.star::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #e798a8;
+  -webkit-mask: url(/images/star.svg);
+          mask: url(/images/star.svg);
+}
+section.reviews div.review div.author div.stars div.star.empty::after {
+  width: 0%;
+}
+section.reviews div.review div.author div.stars div.star.half::after {
+  width: 50%;
+}
 section.reviews div.review.big {
   width: 720px;
   display: grid;
