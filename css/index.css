@@ -981,9 +981,9 @@ section.why div.container div.grid div.bottle img.bottle {
   width: 70%;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%) rotate(20deg);
+      -ms-transform: translate(-50%, -50%) rotate(20deg);
+          transform: translate(-50%, -50%) rotate(20deg);
   z-index: 2;
 }
 @media (max-width: 640px) {

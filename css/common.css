@@ -178,6 +178,16 @@ html, body {
   background: linear-gradient(180deg, #fff 0%, #fffafd 29.81%);
 }
 
+body {
+  min-height: 100vh;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  grid-template-rows: -webkit-max-content 1fr -webkit-max-content;
+  grid-template-rows: max-content 1fr max-content;
+}
+
 section, header, footer {
   width: 100%;
   position: relative;
